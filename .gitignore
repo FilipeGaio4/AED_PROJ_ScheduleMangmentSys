@@ -1,0 +1,37 @@
+.idea
+.DS_Store
+.idea/
+*.iml
+.cmake/
+cmake-build-debug/
+cmake-build-release/
+CMakeLists.txt.user
+*.out
+*.app
+*.exe
+*.dll
+*.so
+*.dylib
+
+# CLion-specific files and folders
+
+# Build output
+build/
+
+# Dependency folders
+vendor/
+
+# macOS system files
+.DS_Store
+
+# Visual Studio Code settings
+.vscode/
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml

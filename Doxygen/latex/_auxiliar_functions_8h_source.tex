@@ -1,0 +1,143 @@
+\hypertarget{_auxiliar_functions_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Auxiliar\+Functions.h}
+\mbox{\hyperlink{_auxiliar_functions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 01-\/11-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef PROJ2023\_AUXILIARFUNCTIONS\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define PROJ2023\_AUXILIARFUNCTIONS\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stack>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_classs_8h}{Classs.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uc_8h}{Uc.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_opperation_8h}{Opperation.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keywordtype}{void} \mbox{\hyperlink{_auxiliar_functions_8h_a4feed93fa167003c1a5665d1d7711190}{printSchedule}}(\textcolor{keyword}{const} vector<pair<std::string, std::string>>\& isInUcCl, vector<Uc> *ucs)\{}
+\DoxyCodeLine{20     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& ucUl : isInUcCl)\{}
+\DoxyCodeLine{21         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} uc : *ucs)\{}
+\DoxyCodeLine{22             \textcolor{keywordflow}{if} (ucUl.first == uc.getCode())\{}
+\DoxyCodeLine{23                 \textcolor{keywordflow}{for} ( \textcolor{keyword}{const} \textcolor{keyword}{auto}\& cl : uc.getClassses())\{}
+\DoxyCodeLine{24                     \textcolor{keywordflow}{if} (ucUl.second == cl.getCode())\{}
+\DoxyCodeLine{25                         uc.printClassSchedule(cl);}
+\DoxyCodeLine{26                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{27                     \}}
+\DoxyCodeLine{28                 \}}
+\DoxyCodeLine{29                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{30             \}}
+\DoxyCodeLine{31         \}}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 vector<pair<Aula, pair<string, string>>> \mbox{\hyperlink{_auxiliar_functions_8h_aefb1e0814c17d7beb98692b86f05863d}{overlappedClasses}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_student}{Student}}\& student, vector<Uc> \&ucs) \{}
+\DoxyCodeLine{36     vector<pair<Aula, pair<string, string>>> studentsClasses;}
+\DoxyCodeLine{37     vector<pair<Aula, pair<string, string>>> overlapped;}
+\DoxyCodeLine{38     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{class_uc}{Uc}}\& uc : ucs)\{}
+\DoxyCodeLine{39         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{class_classs}{Classs}}\& classs : uc.getClassses())\{}
+\DoxyCodeLine{40             \textcolor{keywordflow}{for} ( \textcolor{keyword}{const} \textcolor{keyword}{auto}\& p : student.\mbox{\hyperlink{class_student_a4bbb17e54054460ceffd29568dd19a52}{getIsIn}}())\{}
+\DoxyCodeLine{41                 \textcolor{keywordflow}{if} (uc.getCode() == p.first \&\& classs.getCode() == p.second)\{}
+\DoxyCodeLine{42                     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{struct_aula}{Aula}}\& aula : classs.getSchedule())\{}
+\DoxyCodeLine{43                         pair<Aula, pair<string, string>> tmp = make\_pair(aula, make\_pair(uc.getCode(),classs.getCode()));}
+\DoxyCodeLine{44                         studentsClasses.push\_back(tmp);}
+\DoxyCodeLine{45                     \}}
+\DoxyCodeLine{46                 \}}
+\DoxyCodeLine{47             \}}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& p: studentsClasses)\{}
+\DoxyCodeLine{51         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& p1: studentsClasses)\{}
+\DoxyCodeLine{52             \textcolor{keywordflow}{if} (p.second != p1.second)\{}
+\DoxyCodeLine{53                 \textcolor{keywordflow}{if}(p.first.weekDay == p1.first.weekDay \&\& ((p.first.start <= p1.first.start \&\& p.first.end > p1.first.start) || (p.first.start >= p1.first.start \&\& p1.first.end > p.first.start)))}
+\DoxyCodeLine{54                 \{}
+\DoxyCodeLine{55                     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{false};}
+\DoxyCodeLine{56                     \textcolor{keywordtype}{bool} second = \textcolor{keyword}{false};}
+\DoxyCodeLine{57                     \textcolor{comment}{//verificar se ainda n esta}}
+\DoxyCodeLine{58                     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& patual : overlapped)\{}
+\DoxyCodeLine{59                         \textcolor{keywordflow}{if} (patual == p) first = \textcolor{keyword}{true};}
+\DoxyCodeLine{60                         \textcolor{keywordflow}{if} (patual == p1) second = \textcolor{keyword}{true};}
+\DoxyCodeLine{61                     \}}
+\DoxyCodeLine{62                     \textcolor{keywordflow}{if} (!first) overlapped.push\_back(p);}
+\DoxyCodeLine{63                     \textcolor{keywordflow}{if} (!second) overlapped.push\_back(p1);}
+\DoxyCodeLine{64                 \}}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68     \textcolor{keywordflow}{return} overlapped;}
+\DoxyCodeLine{69 \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{//Funtion to read csv of opps and create a stack}}
+\DoxyCodeLine{72 stack<Opperation> \mbox{\hyperlink{_auxiliar_functions_8h_acb47f4956f4de2e2cc3e1774dd206550}{loadRequests}}()\{}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{//Stack to store requests}}
+\DoxyCodeLine{75     stack<Opperation> requests;}
+\DoxyCodeLine{76     ifstream file(\textcolor{stringliteral}{"{}../schedule/operations.csv"{}}); \textcolor{comment}{// Open the CSV file}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{true};}
+\DoxyCodeLine{80     \textcolor{keywordflow}{while} (getline(file, line)) \{}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} (line != \textcolor{stringliteral}{"{}\(\backslash\)r"{}}) \{}
+\DoxyCodeLine{82             istringstream ss(line);}
+\DoxyCodeLine{83             \textcolor{keywordtype}{string} type, meca, ucCode, originClass, finalClass;}
+\DoxyCodeLine{84             \textcolor{keywordtype}{int} numero;}
+\DoxyCodeLine{85             \textcolor{keywordtype}{bool} existeAluno = \textcolor{keyword}{false};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87             \textcolor{keywordflow}{if} (!first) \{}
+\DoxyCodeLine{88                 getline(ss, type, \textcolor{charliteral}{','});}
+\DoxyCodeLine{89                 getline(ss, meca, \textcolor{charliteral}{','}); \textcolor{comment}{// Read number as a string and then convert}}
+\DoxyCodeLine{90                 getline(ss, ucCode, \textcolor{charliteral}{','});}
+\DoxyCodeLine{91                 \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}add"{}})\{}
+\DoxyCodeLine{92                     getline(ss, finalClass, \textcolor{charliteral}{','});}
+\DoxyCodeLine{93                     originClass = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{94                 \}}
+\DoxyCodeLine{95                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}remove"{}})\{}
+\DoxyCodeLine{96                     getline(ss, originClass, \textcolor{charliteral}{','});}
+\DoxyCodeLine{97                     finalClass = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{98                 \}}
+\DoxyCodeLine{99                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}switch"{}})\{}
+\DoxyCodeLine{100                     getline(ss, originClass, \textcolor{charliteral}{','});}
+\DoxyCodeLine{101                     getline(ss, finalClass, \textcolor{charliteral}{','});}
+\DoxyCodeLine{102                 \}}
+\DoxyCodeLine{103                 \mbox{\hyperlink{struct_opperation}{Opperation}} op = \{type, meca, ucCode, originClass, finalClass\};}
+\DoxyCodeLine{104                 requests.push(op);}
+\DoxyCodeLine{105             \}}
+\DoxyCodeLine{106             first = \textcolor{keyword}{false};}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{keywordflow}{return} requests;}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} \mbox{\hyperlink{_auxiliar_functions_8h_a2733b4196e48f025c2779c2f2299a8e5}{undoSuccessful}}() \{}
+\DoxyCodeLine{115     ifstream inputFile(\textcolor{stringliteral}{"{}../schedule/operations.csv"{}});}
+\DoxyCodeLine{116     vector<string> lines;}
+\DoxyCodeLine{117     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordflow}{while} (getline(inputFile, line)) \{}
+\DoxyCodeLine{120         lines.push\_back(line);}
+\DoxyCodeLine{121     \}}
+\DoxyCodeLine{122     lines.pop\_back();}
+\DoxyCodeLine{123     lines.pop\_back();}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     inputFile.close();}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     std::ofstream outputFile(\textcolor{stringliteral}{"{}../schedule/operations.csv"{}});}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& l : lines) \{}
+\DoxyCodeLine{130         outputFile << l << std::endl;}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     outputFile.close();}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_AUXILIARFUNCTIONS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+\hypertarget{Classs_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Classs.h}
+\mbox{\hyperlink{Classs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 28-\/10-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef CLASSS\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define CLASSS\_H}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Aula_8h}{Aula.h}}"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classClasss}{Classs}} \{}
+\DoxyCodeLine{32 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     \textcolor{keywordtype}{string} codeCl\_; }
+\DoxyCodeLine{34     vector<Student> students\_; }
+\DoxyCodeLine{35     vector<Aula> aulas\_; }
+\DoxyCodeLine{36     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} Cap = 40; }
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42     \mbox{\hyperlink{classClasss_a8a2777aa774ac533e060349103516cc1}{Classs}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{48     \mbox{\hyperlink{classClasss_a62a4e9183c6a1db01a7204faf4da4cd1}{Classs}}(\textcolor{keywordtype}{string} code);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{// Classs Setter and Getter}}
+\DoxyCodeLine{55 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{classClasss_ad8e12189ad8e7c98069ed534c2d0902f}{setCode}}(\textcolor{keywordtype}{string} code);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{string} \mbox{\hyperlink{classClasss_a4a40648a3d8fd64f1c46157eb5758411}{getCode}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67     vector<Student> \mbox{\hyperlink{classClasss_a582cd100c057e93c8e8a2f635c0bef75}{getStudents}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73     vector<Aula> \mbox{\hyperlink{classClasss_accfd844188435042f4e63135e30da925}{getSchedule}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClasss_a2eeb3a636e29254598f962620cbb9983}{setStudents}}(vector<Student> students);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClasss_a6b5fcba79b5ca327cfb365ec73b884af}{addStudentToUc}}(\mbox{\hyperlink{classStudent}{Student}} \&student, \textcolor{keywordtype}{string} ucCode);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClasss_a41c0c7ac8f9a2c9a382917f2c1a72a6b}{removeStudent}}(\mbox{\hyperlink{classStudent}{Student}} \&student, \textcolor{keywordtype}{string} ucCode);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{// Class functions to manage lectures}}
+\DoxyCodeLine{100 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{classClasss_ab42df9de0df0408f4765efc49e19b192}{addAula}}(\mbox{\hyperlink{structAula}{Aula}} aula);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClasss_a6c9e90b9ec4343db6c694eb9a3bdaddf}{printAula}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{111     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classClasss_a841d07ca20923c364ec4acb1d77cdf79}{canEnter}}();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classClasss_afaea253d7b6cc1cfd206ad46e9deac86}{scheduleConflicts}}(\mbox{\hyperlink{classClasss}{Classs}} requiredClasss);}
+\DoxyCodeLine{119 \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_CLASSS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,113 @@
+\hypertarget{AuxiliarFunctions_8h}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Auxiliar\+Functions.h File Reference}
+\label{AuxiliarFunctions_8h}\index{/home/filipegaio/Desktop/FEUP/AED-\/cpp/AED-\/proj2023/AuxiliarFunctions.h@{/home/filipegaio/Desktop/FEUP/AED-\/cpp/AED-\/proj2023/AuxiliarFunctions.h}}
+
+
+This file holds some functions that will make code cleaner and easier to understand.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include \char`\"{}Student.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Classs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Uc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Opperation.\+h\char`\"{}}\newline
+Include dependency graph for Auxiliar\+Functions.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AuxiliarFunctions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{AuxiliarFunctions_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{AuxiliarFunctions_8h_adae90ee7f26a97809610f4107ef8dec9}{print\+Schedule}} (const vector$<$ pair$<$ string, string $>$ $>$ \&is\+In\+Uc\+Cl, vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs)
+\begin{DoxyCompactList}\small\item\em This functions prints to the terminal the Schedule of a certain student,. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ \mbox{\hyperlink{structAula}{Aula}}, pair$<$ string, string $>$ $>$ $>$ \mbox{\hyperlink{AuxiliarFunctions_8h_aefb1e0814c17d7beb98692b86f05863d}{overlapped\+Classes}} (const \mbox{\hyperlink{classStudent}{Student}} \&student, vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&ucs)
+\begin{DoxyCompactList}\small\item\em The function will check for overlapped Classes. \end{DoxyCompactList}\item 
+stack$<$ \mbox{\hyperlink{structOpperation}{Opperation}} $>$ \mbox{\hyperlink{AuxiliarFunctions_8h_acb47f4956f4de2e2cc3e1774dd206550}{load\+Requests}} ()
+\begin{DoxyCompactList}\small\item\em The function will read the csv that contains the recent opperations that wew made trough a request and store them in a stack that will be returned. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{AuxiliarFunctions_8h_a2733b4196e48f025c2779c2f2299a8e5}{undo\+Successful}} ()
+\begin{DoxyCompactList}\small\item\em If the undo request is successful we must erase the line in the csv that holds the undid request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file holds some functions that will make code cleaner and easier to understand. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{AuxiliarFunctions_8h_acb47f4956f4de2e2cc3e1774dd206550}\label{AuxiliarFunctions_8h_acb47f4956f4de2e2cc3e1774dd206550}} 
+\index{AuxiliarFunctions.h@{AuxiliarFunctions.h}!loadRequests@{loadRequests}}
+\index{loadRequests@{loadRequests}!AuxiliarFunctions.h@{AuxiliarFunctions.h}}
+\doxysubsubsection{\texorpdfstring{loadRequests()}{loadRequests()}}
+{\footnotesize\ttfamily stack$<$ \mbox{\hyperlink{structOpperation}{Opperation}} $>$ load\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The function will read the csv that contains the recent opperations that wew made trough a request and store them in a stack that will be returned. 
+
+Time Complexity \+: O(n) being n the number of lines in the csv
+
+\begin{DoxyReturn}{Returns}
+Returns a stack with all those Requests. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{AuxiliarFunctions_8h_aefb1e0814c17d7beb98692b86f05863d}\label{AuxiliarFunctions_8h_aefb1e0814c17d7beb98692b86f05863d}} 
+\index{AuxiliarFunctions.h@{AuxiliarFunctions.h}!overlappedClasses@{overlappedClasses}}
+\index{overlappedClasses@{overlappedClasses}!AuxiliarFunctions.h@{AuxiliarFunctions.h}}
+\doxysubsubsection{\texorpdfstring{overlappedClasses()}{overlappedClasses()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{structAula}{Aula}}, pair$<$ string, string $>$ $>$ $>$ overlapped\+Classes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStudent}{Student}} \&}]{student,  }\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&}]{ucs }\end{DoxyParamCaption})}
+
+
+
+The function will check for overlapped Classes. 
+
+The function will check all of the student\textquotesingle{}s class and check is is there a overlap between them. Notice, however that this overlaps are viable, meaning that are only overlapped with Theorical Lectures.
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & The student that we want to analyse it\textquotesingle{}s schedule. \\
+\hline
+{\em ucs} & A vector with all ucs and respective information (Holds the information about the schedule of each class). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector with the pairs of overlapped classes (Pair$<$\+Aula, pair$<$\+Uc\+Code, Class\+Code$>$$>$). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{AuxiliarFunctions_8h_adae90ee7f26a97809610f4107ef8dec9}\label{AuxiliarFunctions_8h_adae90ee7f26a97809610f4107ef8dec9}} 
+\index{AuxiliarFunctions.h@{AuxiliarFunctions.h}!printSchedule@{printSchedule}}
+\index{printSchedule@{printSchedule}!AuxiliarFunctions.h@{AuxiliarFunctions.h}}
+\doxysubsubsection{\texorpdfstring{printSchedule()}{printSchedule()}}
+{\footnotesize\ttfamily void print\+Schedule (\begin{DoxyParamCaption}\item[{const vector$<$ pair$<$ string, string $>$ $>$ \&}]{is\+In\+Uc\+Cl,  }\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs }\end{DoxyParamCaption})}
+
+
+
+This functions prints to the terminal the Schedule of a certain student,. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+In\+Uc\+Cl} & A vector that holds pairs for every \mbox{\hyperlink{classUc}{Uc}}, Class that the student is part of. \\
+\hline
+{\em ucs} & A vector with all ucs and respective information (Holds the information about the schedule of each class). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{AuxiliarFunctions_8h_a2733b4196e48f025c2779c2f2299a8e5}\label{AuxiliarFunctions_8h_a2733b4196e48f025c2779c2f2299a8e5}} 
+\index{AuxiliarFunctions.h@{AuxiliarFunctions.h}!undoSuccessful@{undoSuccessful}}
+\index{undoSuccessful@{undoSuccessful}!AuxiliarFunctions.h@{AuxiliarFunctions.h}}
+\doxysubsubsection{\texorpdfstring{undoSuccessful()}{undoSuccessful()}}
+{\footnotesize\ttfamily void undo\+Successful (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If the undo request is successful we must erase the line in the csv that holds the undid request. 
+
+The function will read the csv and make the needed changes according to the needs. 

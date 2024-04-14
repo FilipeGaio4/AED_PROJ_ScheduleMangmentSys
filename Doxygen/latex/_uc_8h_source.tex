@@ -1,0 +1,74 @@
+\hypertarget{_uc_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Uc.h}
+\mbox{\hyperlink{_uc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 28-\/10-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef UC\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define UC\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_classs_8h}{Classs.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_uc}{Uc}} \{}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16     \textcolor{keywordtype}{string} codeUc\_;}
+\DoxyCodeLine{17     vector<Classs> classes\_;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \textcolor{comment}{//Uc Constructor}}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_uc_a80ef0956e158a516d36be2a27e0d1281}{Uc}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_uc_aa7f412adbf0e2a2af1db7b757135a288}{Uc}}(\textcolor{keywordtype}{string} code);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{//Uc Setter and Getter}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_a55f9a7b49b5cc9498ce0cca242b2aca1}{setCode}}(\textcolor{keywordtype}{string} code);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_uc_a76d02ea29a60fd4fb69676f74d447f28}{getCode}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{//Uc get classes}}
+\DoxyCodeLine{31     vector<Classs> \mbox{\hyperlink{class_uc_aae5fbbe4110f23538e8c7478f790b6db}{getClassses}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{//Uc functions to add classes to a certain Uc}}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_a20c81875746d8c3fa24d18da20108e1e}{setClassses}}(vector<Classs> classes);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_a9c317069b3aa898f4dd16f88f6c57d2e}{addClasss}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_classs}{Classs}}\& aClasss);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_adfd77da8962766450e4f76901def33c9}{updateClasss}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_classs}{Classs}}\& aClasss); \textcolor{comment}{//Updates a specific class inside a UC}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uc_a1282d7870b9efcae8762df294ee14dd1}{diffMaxClasssAttendance}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uc_a4d95ca7afb31dbd7c2a7ca9266512260}{switchClass}}(\mbox{\hyperlink{class_student}{Student}}\& you, vector<Uc>\& ucs, vector<Student>\& students, \mbox{\hyperlink{class_classs}{Classs}}\& classsAtual, \textcolor{keywordtype}{string} requiredClasss);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_ae44e0bbc026836ccf6487cd3ca917821}{printClassSchedule}}(\mbox{\hyperlink{class_classs}{Classs}} aClasss); \textcolor{comment}{//prints a specific classs schedule's to terminal}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_abab78d8d8dbf67e344f92b16b0467e35}{duplicatingFiles}}(\textcolor{keywordtype}{string} name, fstream file);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uc_ab960dc842a76407e2df838cb708d8575}{scheduleConflicts}}(\textcolor{keywordtype}{bool} switchRequest, \textcolor{keyword}{const} \mbox{\hyperlink{class_classs}{Classs}}\& requiredClasss, \mbox{\hyperlink{class_student}{Student}} student, vector<Uc>\& ucs);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_aacc97f3c52df0aeeea7c0015ada7b8bb}{writeOperations}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uc_abf58e1198210b8e1e413ae50cd9db668}{addUc}}(\mbox{\hyperlink{class_student}{Student}}\& student, vector<Uc>\& ucs);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uc_a336e723181595576f6addeea11f45411}{removeUc}}(\mbox{\hyperlink{class_student}{Student}}\& student, vector<Uc>\& ucs, \mbox{\hyperlink{class_classs}{Classs}} atualClass);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_aad67e381f74a10857dcb4e9ebf9aa425}{modifyingStudents}}(\textcolor{keywordtype}{string} type, \textcolor{keywordtype}{int} num, \textcolor{keywordtype}{string} nameStudent, \textcolor{keywordtype}{string} requiredClass, \textcolor{keywordtype}{string} requiredUc);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_afecef9a46b98f7749367592482afc034}{removeLine}}(\textcolor{keywordtype}{size\_t} lineToDelete);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_a3bf9eeaeaa806a9fdfc4ad61631c7a2b}{writeAdd}}(\textcolor{keywordtype}{int} num, \textcolor{keywordtype}{string} requiredUc, \textcolor{keywordtype}{string} requiredClass);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_af4d4120d7fd33dbb9f65389d351667ef}{writeSwitch}}(\textcolor{keywordtype}{int} num, \textcolor{keywordtype}{string} uc, \textcolor{keywordtype}{string} requiredClass, \textcolor{keywordtype}{string} currentClass);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uc_aaa9b77510f128bb22a2c0d31806b0358}{writeRemove}}(\textcolor{keywordtype}{int} num, \textcolor{keywordtype}{string} requiredUc, \textcolor{keywordtype}{string} requiredClass);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_UC\_H}}
+
+\end{DoxyCode}

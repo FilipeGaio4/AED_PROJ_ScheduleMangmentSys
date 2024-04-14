@@ -1,0 +1,392 @@
+\hypertarget{classUc}{}\doxysection{Uc Class Reference}
+\label{classUc}\index{Uc@{Uc}}
+
+
+The \mbox{\hyperlink{classUc}{Uc}} class represents a course (Unidade Curricular).  
+
+
+
+
+{\ttfamily \#include $<$Uc.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUc_a80ef0956e158a516d36be2a27e0d1281}\label{classUc_a80ef0956e158a516d36be2a27e0d1281}} 
+{\bfseries Uc} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classUc}{Uc}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUc_aa7f412adbf0e2a2af1db7b757135a288}{Uc}} (string code)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the \mbox{\hyperlink{classUc}{Uc}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_a55f9a7b49b5cc9498ce0cca242b2aca1}{set\+Code}} (string code)
+\begin{DoxyCompactList}\small\item\em Sets the unique code for the UC. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classUc_a76d02ea29a60fd4fb69676f74d447f28}{get\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Gets the unique code of the UC. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classClasss}{Classs}} $>$ \mbox{\hyperlink{classUc_aae5fbbe4110f23538e8c7478f790b6db}{get\+Classses}} () const
+\begin{DoxyCompactList}\small\item\em Gets the vector of \mbox{\hyperlink{classClasss}{Classs}} objects associated with the UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_a20c81875746d8c3fa24d18da20108e1e}{set\+Classses}} (vector$<$ \mbox{\hyperlink{classClasss}{Classs}} $>$ classes)
+\begin{DoxyCompactList}\small\item\em Sets the vector of \mbox{\hyperlink{classClasss}{Classs}} objects associated with the UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_a9c317069b3aa898f4dd16f88f6c57d2e}{add\+Classs}} (const \mbox{\hyperlink{classClasss}{Classs}} \&a\+Classs)
+\begin{DoxyCompactList}\small\item\em Adds a class to the UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_adfd77da8962766450e4f76901def33c9}{update\+Classs}} (const \mbox{\hyperlink{classClasss}{Classs}} \&a\+Classs)
+\begin{DoxyCompactList}\small\item\em Updates a specific class inside a UC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUc_a1282d7870b9efcae8762df294ee14dd1}{diff\+Max\+Classs\+Attendance}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the difference between the maximum class attendance and the lest class attendance in this UC. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUc_a4d95ca7afb31dbd7c2a7ca9266512260}{switch\+Class}} (\mbox{\hyperlink{classStudent}{Student}} \&you, vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ \&students, \mbox{\hyperlink{classClasss}{Classs}} \&classs\+Atual, string required\+Classs)
+\begin{DoxyCompactList}\small\item\em Switches a student to a different class within the UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_ae44e0bbc026836ccf6487cd3ca917821}{print\+Class\+Schedule}} (\mbox{\hyperlink{classClasss}{Classs}} a\+Classs)
+\begin{DoxyCompactList}\small\item\em Prints the schedule of a specific class to the terminal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUc_ab960dc842a76407e2df838cb708d8575}{schedule\+Conflicts}} (bool switch\+Request, const \mbox{\hyperlink{classClasss}{Classs}} \&required\+Classs, \mbox{\hyperlink{classStudent}{Student}} student, vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&ucs)
+\begin{DoxyCompactList}\small\item\em Checks for schedule conflicts within the UC. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUc_abf58e1198210b8e1e413ae50cd9db668}{add\+Uc}} (\mbox{\hyperlink{classStudent}{Student}} \&student, vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&ucs)
+\begin{DoxyCompactList}\small\item\em Adds a student to the UC the most appropriate class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUc_a336e723181595576f6addeea11f45411}{remove\+Uc}} (\mbox{\hyperlink{classStudent}{Student}} \&student, vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&ucs, \mbox{\hyperlink{classClasss}{Classs}} atual\+Class)
+\begin{DoxyCompactList}\small\item\em Removes a student from the UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_aad67e381f74a10857dcb4e9ebf9aa425}{modifying\+Students}} (string type, int num, string name\+Student, string required\+Class, string required\+Uc)
+\begin{DoxyCompactList}\small\item\em Modifies student csv information based on the provided parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_afecef9a46b98f7749367592482afc034}{remove\+Line}} (size\+\_\+t line\+To\+Delete)
+\begin{DoxyCompactList}\small\item\em Removes a specific line from a file from the csv. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_a3bf9eeaeaa806a9fdfc4ad61631c7a2b}{write\+Add}} (int num, string required\+Uc, string required\+Class)
+\begin{DoxyCompactList}\small\item\em Writes an addition operation to the csv Opperations file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_af4d4120d7fd33dbb9f65389d351667ef}{write\+Switch}} (int num, string uc, string required\+Class, string current\+Class)
+\begin{DoxyCompactList}\small\item\em Writes a switch operation to the csv Opperations file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUc_aaa9b77510f128bb22a2c0d31806b0358}{write\+Remove}} (int num, string required\+Uc, string required\+Class)
+\begin{DoxyCompactList}\small\item\em Writes a removal operation to the csv Opperations file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classUc}{Uc}} class represents a course (Unidade Curricular). 
+
+The \mbox{\hyperlink{classUc}{Uc}} class includes attributes for UC code and a vector to keep track of the classes associated with the UC. It also provides methods to manage classes and student enrollments. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUc_aa7f412adbf0e2a2af1db7b757135a288}\label{classUc_aa7f412adbf0e2a2af1db7b757135a288}} 
+\index{Uc@{Uc}!Uc@{Uc}}
+\index{Uc@{Uc}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{Uc()}{Uc()}}
+{\footnotesize\ttfamily Uc\+::\+Uc (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the \mbox{\hyperlink{classUc}{Uc}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Unique code for identifying the UC. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUc_a9c317069b3aa898f4dd16f88f6c57d2e}\label{classUc_a9c317069b3aa898f4dd16f88f6c57d2e}} 
+\index{Uc@{Uc}!addClasss@{addClasss}}
+\index{addClasss@{addClasss}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{addClasss()}{addClasss()}}
+{\footnotesize\ttfamily void Uc\+::add\+Classs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classClasss}{Classs}} \&}]{a\+Classs }\end{DoxyParamCaption})}
+
+
+
+Adds a class to the UC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Classs} & \mbox{\hyperlink{classClasss}{Classs}} object representing the class to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_abf58e1198210b8e1e413ae50cd9db668}\label{classUc_abf58e1198210b8e1e413ae50cd9db668}} 
+\index{Uc@{Uc}!addUc@{addUc}}
+\index{addUc@{addUc}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{addUc()}{addUc()}}
+{\footnotesize\ttfamily bool Uc\+::add\+Uc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStudent}{Student}} \&}]{student,  }\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&}]{ucs }\end{DoxyParamCaption})}
+
+
+
+Adds a student to the UC the most appropriate class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & \mbox{\hyperlink{classStudent}{Student}} object representing the student to be added. \\
+\hline
+{\em ucs} & Vector of \mbox{\hyperlink{classUc}{Uc}} objects representing all UCs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the student is successfully added, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUc_a1282d7870b9efcae8762df294ee14dd1}\label{classUc_a1282d7870b9efcae8762df294ee14dd1}} 
+\index{Uc@{Uc}!diffMaxClasssAttendance@{diffMaxClasssAttendance}}
+\index{diffMaxClasssAttendance@{diffMaxClasssAttendance}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{diffMaxClasssAttendance()}{diffMaxClasssAttendance()}}
+{\footnotesize\ttfamily int Uc\+::diff\+Max\+Classs\+Attendance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the difference between the maximum class attendance and the lest class attendance in this UC. 
+
+\begin{DoxyReturn}{Returns}
+Difference between the maximum class attendance and the minimum class attendance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUc_aae5fbbe4110f23538e8c7478f790b6db}\label{classUc_aae5fbbe4110f23538e8c7478f790b6db}} 
+\index{Uc@{Uc}!getClassses@{getClassses}}
+\index{getClassses@{getClassses}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getClassses()}{getClassses()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classClasss}{Classs}} $>$ Uc\+::get\+Classses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the vector of \mbox{\hyperlink{classClasss}{Classs}} objects associated with the UC. 
+
+\begin{DoxyReturn}{Returns}
+Vector of \mbox{\hyperlink{classClasss}{Classs}} objects representing the classes associated with the UC. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUc_a76d02ea29a60fd4fb69676f74d447f28}\label{classUc_a76d02ea29a60fd4fb69676f74d447f28}} 
+\index{Uc@{Uc}!getCode@{getCode}}
+\index{getCode@{getCode}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily string Uc\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the unique code of the UC. 
+
+\begin{DoxyReturn}{Returns}
+The unique code of the UC. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUc_aad67e381f74a10857dcb4e9ebf9aa425}\label{classUc_aad67e381f74a10857dcb4e9ebf9aa425}} 
+\index{Uc@{Uc}!modifyingStudents@{modifyingStudents}}
+\index{modifyingStudents@{modifyingStudents}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{modifyingStudents()}{modifyingStudents()}}
+{\footnotesize\ttfamily void Uc\+::modifying\+Students (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{int}]{num,  }\item[{string}]{name\+Student,  }\item[{string}]{required\+Class,  }\item[{string}]{required\+Uc }\end{DoxyParamCaption})}
+
+
+
+Modifies student csv information based on the provided parameters. 
+
+Time Complexity \+: O(n) being n the number of lines in the csv
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of modification (add, switch, remove). \\
+\hline
+{\em num} & \mbox{\hyperlink{classStudent}{Student}} number. \\
+\hline
+{\em name\+Student} & \mbox{\hyperlink{classStudent}{Student}} name. \\
+\hline
+{\em required\+Class} & Required class code. \\
+\hline
+{\em required\+Uc} & Required UC code. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_ae44e0bbc026836ccf6487cd3ca917821}\label{classUc_ae44e0bbc026836ccf6487cd3ca917821}} 
+\index{Uc@{Uc}!printClassSchedule@{printClassSchedule}}
+\index{printClassSchedule@{printClassSchedule}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{printClassSchedule()}{printClassSchedule()}}
+{\footnotesize\ttfamily void Uc\+::print\+Class\+Schedule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClasss}{Classs}}}]{a\+Classs }\end{DoxyParamCaption})}
+
+
+
+Prints the schedule of a specific class to the terminal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Classs} & \mbox{\hyperlink{classClasss}{Classs}} object representing the class whose schedule needs to be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_afecef9a46b98f7749367592482afc034}\label{classUc_afecef9a46b98f7749367592482afc034}} 
+\index{Uc@{Uc}!removeLine@{removeLine}}
+\index{removeLine@{removeLine}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{removeLine()}{removeLine()}}
+{\footnotesize\ttfamily void Uc\+::remove\+Line (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{line\+To\+Delete }\end{DoxyParamCaption})}
+
+
+
+Removes a specific line from a file from the csv. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+To\+Delete} & Line number to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_a336e723181595576f6addeea11f45411}\label{classUc_a336e723181595576f6addeea11f45411}} 
+\index{Uc@{Uc}!removeUc@{removeUc}}
+\index{removeUc@{removeUc}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{removeUc()}{removeUc()}}
+{\footnotesize\ttfamily bool Uc\+::remove\+Uc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStudent}{Student}} \&}]{student,  }\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&}]{ucs,  }\item[{\mbox{\hyperlink{classClasss}{Classs}}}]{atual\+Class }\end{DoxyParamCaption})}
+
+
+
+Removes a student from the UC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & \mbox{\hyperlink{classStudent}{Student}} object representing the student to be removed. \\
+\hline
+{\em ucs} & Vector of \mbox{\hyperlink{classUc}{Uc}} objects representing all UCs. \\
+\hline
+{\em atual\+Class} & Current \mbox{\hyperlink{classClasss}{Classs}} object of the student. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the student is successfully removed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUc_ab960dc842a76407e2df838cb708d8575}\label{classUc_ab960dc842a76407e2df838cb708d8575}} 
+\index{Uc@{Uc}!scheduleConflicts@{scheduleConflicts}}
+\index{scheduleConflicts@{scheduleConflicts}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{scheduleConflicts()}{scheduleConflicts()}}
+{\footnotesize\ttfamily bool Uc\+::schedule\+Conflicts (\begin{DoxyParamCaption}\item[{bool}]{switch\+Request,  }\item[{const \mbox{\hyperlink{classClasss}{Classs}} \&}]{required\+Classs,  }\item[{\mbox{\hyperlink{classStudent}{Student}}}]{student,  }\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&}]{ucs }\end{DoxyParamCaption})}
+
+
+
+Checks for schedule conflicts within the UC. 
+
+Time Complexity \+: O(uc $\ast$ cl $\ast$ p $\ast$ a²) being uc the number of ucs, cl the number os classes p the number of classes that the student is in and a the lectures of that class
+
+
+\begin{DoxyParams}{Parameters}
+{\em switch\+Request} & True if the request is for switching classes, false otherwise. \\
+\hline
+{\em required\+Classs} & \mbox{\hyperlink{classClasss}{Classs}} object representing the required class. \\
+\hline
+{\em student} & \mbox{\hyperlink{classStudent}{Student}} object for whom the check is performed. \\
+\hline
+{\em ucs} & Vector of \mbox{\hyperlink{classUc}{Uc}} objects representing all UCs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there are schedule conflicts, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUc_a20c81875746d8c3fa24d18da20108e1e}\label{classUc_a20c81875746d8c3fa24d18da20108e1e}} 
+\index{Uc@{Uc}!setClassses@{setClassses}}
+\index{setClassses@{setClassses}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{setClassses()}{setClassses()}}
+{\footnotesize\ttfamily void Uc\+::set\+Classses (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classClasss}{Classs}} $>$}]{classes }\end{DoxyParamCaption})}
+
+
+
+Sets the vector of \mbox{\hyperlink{classClasss}{Classs}} objects associated with the UC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classes} & Vector of \mbox{\hyperlink{classClasss}{Classs}} objects representing the classes associated with the UC. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_a55f9a7b49b5cc9498ce0cca242b2aca1}\label{classUc_a55f9a7b49b5cc9498ce0cca242b2aca1}} 
+\index{Uc@{Uc}!setCode@{setCode}}
+\index{setCode@{setCode}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{setCode()}{setCode()}}
+{\footnotesize\ttfamily void Uc\+::set\+Code (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Sets the unique code for the UC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Unique code for identifying the UC. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_a4d95ca7afb31dbd7c2a7ca9266512260}\label{classUc_a4d95ca7afb31dbd7c2a7ca9266512260}} 
+\index{Uc@{Uc}!switchClass@{switchClass}}
+\index{switchClass@{switchClass}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{switchClass()}{switchClass()}}
+{\footnotesize\ttfamily bool Uc\+::switch\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStudent}{Student}} \&}]{you,  }\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \&}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ \&}]{students,  }\item[{\mbox{\hyperlink{classClasss}{Classs}} \&}]{classs\+Atual,  }\item[{string}]{required\+Classs }\end{DoxyParamCaption})}
+
+
+
+Switches a student to a different class within the UC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em you} & \mbox{\hyperlink{classStudent}{Student}} object representing the student requesting the switch. \\
+\hline
+{\em ucs} & Vector of \mbox{\hyperlink{classUc}{Uc}} objects representing all UCs. \\
+\hline
+{\em students} & Vector of \mbox{\hyperlink{classStudent}{Student}} objects representing all students. \\
+\hline
+{\em classs\+Atual} & Current \mbox{\hyperlink{classClasss}{Classs}} object of the student. \\
+\hline
+{\em required\+Classs} & Required class code for the switch. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the switch is successful, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUc_adfd77da8962766450e4f76901def33c9}\label{classUc_adfd77da8962766450e4f76901def33c9}} 
+\index{Uc@{Uc}!updateClasss@{updateClasss}}
+\index{updateClasss@{updateClasss}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{updateClasss()}{updateClasss()}}
+{\footnotesize\ttfamily void Uc\+::update\+Classs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classClasss}{Classs}} \&}]{a\+Classs }\end{DoxyParamCaption})}
+
+
+
+Updates a specific class inside a UC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Classs} & \mbox{\hyperlink{classClasss}{Classs}} object representing the updated class. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_a3bf9eeaeaa806a9fdfc4ad61631c7a2b}\label{classUc_a3bf9eeaeaa806a9fdfc4ad61631c7a2b}} 
+\index{Uc@{Uc}!writeAdd@{writeAdd}}
+\index{writeAdd@{writeAdd}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{writeAdd()}{writeAdd()}}
+{\footnotesize\ttfamily void Uc\+::write\+Add (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{string}]{required\+Uc,  }\item[{string}]{required\+Class }\end{DoxyParamCaption})}
+
+
+
+Writes an addition operation to the csv Opperations file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \mbox{\hyperlink{classStudent}{Student}} number. \\
+\hline
+{\em required\+Uc} & Required UC code. \\
+\hline
+{\em required\+Class} & Required class code. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_aaa9b77510f128bb22a2c0d31806b0358}\label{classUc_aaa9b77510f128bb22a2c0d31806b0358}} 
+\index{Uc@{Uc}!writeRemove@{writeRemove}}
+\index{writeRemove@{writeRemove}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{writeRemove()}{writeRemove()}}
+{\footnotesize\ttfamily void Uc\+::write\+Remove (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{string}]{required\+Uc,  }\item[{string}]{required\+Class }\end{DoxyParamCaption})}
+
+
+
+Writes a removal operation to the csv Opperations file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \mbox{\hyperlink{classStudent}{Student}} number. \\
+\hline
+{\em required\+Uc} & Required UC code. \\
+\hline
+{\em required\+Class} & Required class code. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUc_af4d4120d7fd33dbb9f65389d351667ef}\label{classUc_af4d4120d7fd33dbb9f65389d351667ef}} 
+\index{Uc@{Uc}!writeSwitch@{writeSwitch}}
+\index{writeSwitch@{writeSwitch}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{writeSwitch()}{writeSwitch()}}
+{\footnotesize\ttfamily void Uc\+::write\+Switch (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{string}]{uc,  }\item[{string}]{required\+Class,  }\item[{string}]{current\+Class }\end{DoxyParamCaption})}
+
+
+
+Writes a switch operation to the csv Opperations file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \mbox{\hyperlink{classStudent}{Student}} number. \\
+\hline
+{\em uc} & UC code. \\
+\hline
+{\em required\+Class} & Required class code. \\
+\hline
+{\em current\+Class} & Current class code. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\mbox{\hyperlink{Uc_8h}{Uc.\+h}}\item 
+/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/Uc.\+cpp\end{DoxyCompactItemize}

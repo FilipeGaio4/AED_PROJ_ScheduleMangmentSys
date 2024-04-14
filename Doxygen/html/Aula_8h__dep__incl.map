@@ -1,0 +1,11 @@
+<map id="/home/filipegaio/Desktop/FEUP/AED&#45;cpp/AED&#45;proj2023/Aula.h" name="/home/filipegaio/Desktop/FEUP/AED&#45;cpp/AED&#45;proj2023/Aula.h">
+<area shape="rect" id="node1" title="This file holds a struct Aula." alt="" coords="321,5,578,47"/>
+<area shape="rect" id="node2" href="$Classs_8h.html" title="This file is the header of the Class Classs that contain it&#39;s atrributes and declaration of it&#39;s func..." alt="" coords="343,95,555,151"/>
+<area shape="rect" id="node3" href="$AuxiliarFunctions_8h.html" title="This file holds some functions that will make code cleaner and easier to understand." alt="" coords="27,288,239,344"/>
+<area shape="rect" id="node4" href="$Menu_8h.html" title="Header file containing menu&#45;related functions for managing students, classes, and UCs." alt="" coords="55,392,319,433"/>
+<area shape="rect" id="node6" href="$ClassesPerUcLoad_8h.html" title="This file is responsible to read the csv that hold information about each UC and their classes and st..." alt="" coords="263,288,475,344"/>
+<area shape="rect" id="node7" href="$ClassesScheduleLoad_8h.html" title="This file is responsible to read the csv that hold information about each class and their schedule an..." alt="" coords="599,288,811,344"/>
+<area shape="rect" id="node8" href="$PovoateClassesLoad_8h.html" title="This file is responsible to read the csv that hold information about each Student and the UC&#39;s and cl..." alt="" coords="835,288,1047,344"/>
+<area shape="rect" id="node9" href="$Uc_8h.html" title="This file is the header of the Uc class, containing its attributes and declarations of its functions." alt="" coords="407,199,652,240"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="This file contains the main function that initializes and runs the program." alt="" coords="457,481,669,537"/>
+</map>

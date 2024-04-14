@@ -1,0 +1,61 @@
+\hypertarget{ClassesScheduleLoad_8h}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Classes\+Schedule\+Load.h File Reference}
+\label{ClassesScheduleLoad_8h}\index{/home/filipegaio/Desktop/FEUP/AED-\/cpp/AED-\/proj2023/ClassesScheduleLoad.h@{/home/filipegaio/Desktop/FEUP/AED-\/cpp/AED-\/proj2023/ClassesScheduleLoad.h}}
+
+
+This file is responsible to read the csv that hold information about each class and their schedule and store them in an adequate place.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}Classs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Uc.\+h\char`\"{}}\newline
+Include dependency graph for Classes\+Schedule\+Load.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassesScheduleLoad_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{ClassesScheduleLoad_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ \mbox{\hyperlink{ClassesScheduleLoad_8h_ac5c17697d593574d9a63e5ec6dbb0329}{load\+Classes\+Schedule}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs\+Import, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students\+Students)
+\begin{DoxyCompactList}\small\item\em This function will read data from csv and store every class\textquotesingle{}s schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file is responsible to read the csv that hold information about each class and their schedule and store them in an adequate place. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ClassesScheduleLoad_8h_ac5c17697d593574d9a63e5ec6dbb0329}\label{ClassesScheduleLoad_8h_ac5c17697d593574d9a63e5ec6dbb0329}} 
+\index{ClassesScheduleLoad.h@{ClassesScheduleLoad.h}!loadClassesSchedule@{loadClassesSchedule}}
+\index{loadClassesSchedule@{loadClassesSchedule}!ClassesScheduleLoad.h@{ClassesScheduleLoad.h}}
+\doxysubsubsection{\texorpdfstring{loadClassesSchedule()}{loadClassesSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ load\+Classes\+Schedule (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs\+Import,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students\+Students }\end{DoxyParamCaption})}
+
+
+
+This function will read data from csv and store every class\textquotesingle{}s schedule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & A vector with all students and respective information \\
+\hline
+{\em ucs} & A vector with all ucs and respective information (Will hold the information about the schedule of each class). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Will return the altered ucs vector. 
+\end{DoxyReturn}

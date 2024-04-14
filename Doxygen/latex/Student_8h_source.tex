@@ -1,0 +1,60 @@
+\hypertarget{Student_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Student.h}
+\mbox{\hyperlink{Student_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 27-\/10-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef STUDENT\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define STUDENT\_H}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classStudent}{Student}} \{}
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} number\_; }
+\DoxyCodeLine{31     \textcolor{keywordtype}{string} name\_; }
+\DoxyCodeLine{32     vector<pair<string, string>> isIn\_UcCl; }
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classStudent_a44b0dc0efbc95f687706f28363e897db}{operator<}}(\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& other)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{39         \textcolor{keywordflow}{return} number\_ < other.number\_;}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45     \mbox{\hyperlink{classStudent_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52     \mbox{\hyperlink{classStudent_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}(\textcolor{keywordtype}{int} number, \textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{// Student Setters}}
+\DoxyCodeLine{59 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_a56e75dae2c6ac669b7fd65f09004a49b}{setNumber}}(\textcolor{keywordtype}{int} number);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_a34ff388814a53eddebfdf7af5abe1d98}{setName}}(\textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{// Student Getters}}
+\DoxyCodeLine{72 \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{classStudent_ae7b15f60adaf461d6e70079f7854487c}{getNumber}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{string} \mbox{\hyperlink{classStudent_a1df6c28e6416e20d338b9ff11bdc1e04}{getName}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{84     vector<pair<string, string>> \mbox{\hyperlink{classStudent_a4bbb17e54054460ceffd29568dd19a52}{getIsIn}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// Student Functions}}
+\DoxyCodeLine{92 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_a54f50f0aec0497221c0f49eb6c63483d}{enroll}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& \mbox{\hyperlink{classUc}{Uc}}, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& cl);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_a851ae3734971b659cd8be078a6c0a188}{clearIsIn}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{102     \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_af5508431b49939874cb61a1ece491e0b}{printStudent}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_a829beeab5d3ff33ad2931d80f1aad042}{printStudentIsIn}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_aa909514d8fe37fe6161e83d4a9a29634}{printSchedule}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{classStudent_a26574368d00c3d1cd853527ff06bf6ee}{remove}}(\textcolor{keywordtype}{string} ucCode);}
+\DoxyCodeLine{119 \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// STUDENT\_H}}
+
+\end{DoxyCode}

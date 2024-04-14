@@ -1,0 +1,584 @@
+\hypertarget{Menu_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Menu.h}
+\mbox{\hyperlink{Menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filip on 30/10/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef PROJ2023\_MENU\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define PROJ2023\_MENU\_H}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Classs_8h}{Classs.h}}"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Uc_8h}{Uc.h}}"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{AuxiliarFunctions_8h}{AuxiliarFunctions.h}}"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{41 \textcolor{keywordtype}{void} \mbox{\hyperlink{Menu_8h_a8eae54c7e46ce6a59c1c7e12e4654dd5}{verTodosEstudantes}}(vector<Uc> *ucs, vector<Student> *students) \{}
+\DoxyCodeLine{42     \textcolor{comment}{//prints all students}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{string} orderChoice;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{string} yearChoice;}
+\DoxyCodeLine{46     \textcolor{keywordtype}{string} contentChoice;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     cout << \textcolor{stringliteral}{"{}Escolha a ordenação dos estudantes:\(\backslash\)n"{}};}
+\DoxyCodeLine{49     cout << \textcolor{stringliteral}{"{}1 -\/ Ordenar por número\(\backslash\)n"{}};}
+\DoxyCodeLine{50     cout << \textcolor{stringliteral}{"{}2 -\/ Ordenar por nome\(\backslash\)n"{}};}
+\DoxyCodeLine{51     cout << \textcolor{stringliteral}{"{}Digite sua escolha: "{}};}
+\DoxyCodeLine{52     cin >> orderChoice;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{//User can choose the ordering system of the print}}
+\DoxyCodeLine{55     set<Student> sortedStudents;}
+\DoxyCodeLine{56     sortedStudents.clear();}
+\DoxyCodeLine{57      \textcolor{comment}{//access user's choice}}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if} (orderChoice == \textcolor{stringliteral}{"{}1"{}}) \{}
+\DoxyCodeLine{59         \textcolor{comment}{// Sort students by number and insert into the set}}
+\DoxyCodeLine{60         sortedStudents.insert(students-\/>begin(), students-\/>end());}
+\DoxyCodeLine{61     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (orderChoice == \textcolor{stringliteral}{"{}2"{}}) \{}
+\DoxyCodeLine{62         \textcolor{comment}{// Sort students by name and insert into the set}}
+\DoxyCodeLine{63         sort(students-\/>begin(), students-\/>end(), [](\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& b) \{}
+\DoxyCodeLine{64             return a.getName() < b.getName();}
+\DoxyCodeLine{65         \});}
+\DoxyCodeLine{66     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{67         cout << \textcolor{stringliteral}{"{}Escolha inválida."{}};}
+\DoxyCodeLine{68         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{//content choice means if we want just students or students and theis classes}}
+\DoxyCodeLine{72     \textcolor{comment}{//order choice means if user want to sort them by number or name}}
+\DoxyCodeLine{73     \textcolor{comment}{//year choice means that the user wants to see the students of that specific year}}
+\DoxyCodeLine{74     \textcolor{comment}{//more printing options}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{76         cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nEscolha o conteúdo que quer ver:\(\backslash\)n"{}};}
+\DoxyCodeLine{77         cout << \textcolor{stringliteral}{"{}1 -\/ Ver apenas os estudantes\(\backslash\)n"{}};}
+\DoxyCodeLine{78         cout << \textcolor{stringliteral}{"{}2 -\/ Ver os estudantes e as cadeiras que frequenta\(\backslash\)n"{}};}
+\DoxyCodeLine{79         cout << \textcolor{stringliteral}{"{}0 -\/ Voltar para o menu inicial\(\backslash\)n"{}};}
+\DoxyCodeLine{80         cout << \textcolor{stringliteral}{"{}Digite sua escolha: "{}};}
+\DoxyCodeLine{81         cin >> contentChoice;}
+\DoxyCodeLine{82         \textcolor{comment}{//Allows user to filter by year}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if} (contentChoice == \textcolor{stringliteral}{"{}1"{}} \&\& orderChoice == \textcolor{stringliteral}{"{}1"{}}) \{}
+\DoxyCodeLine{84             cout << \textcolor{stringliteral}{"{}\(\backslash\)nEscolha o ano que quer ver:\(\backslash\)n"{}};}
+\DoxyCodeLine{85             cout << \textcolor{stringliteral}{"{}1 -\/ Primeiro ano\(\backslash\)n"{}};}
+\DoxyCodeLine{86             cout << \textcolor{stringliteral}{"{}2 -\/ Segundo ano\(\backslash\)n"{}};}
+\DoxyCodeLine{87             cout << \textcolor{stringliteral}{"{}3 -\/ Terceiro ano\(\backslash\)n"{}};}
+\DoxyCodeLine{88             cout << \textcolor{stringliteral}{"{}0 -\/ Todos os anos\(\backslash\)n"{}};}
+\DoxyCodeLine{89             cout << \textcolor{stringliteral}{"{}Digite sua escolha: "{}};}
+\DoxyCodeLine{90             cin >> yearChoice;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92             \textcolor{keywordflow}{if} (!(yearChoice == \textcolor{stringliteral}{"{}0"{}} || yearChoice == \textcolor{stringliteral}{"{}1"{}} || yearChoice == \textcolor{stringliteral}{"{}2"{}} || yearChoice == \textcolor{stringliteral}{"{}3"{}} ))\{}
+\DoxyCodeLine{93                 cout << \textcolor{stringliteral}{"{}Escolha inválida."{}};}
+\DoxyCodeLine{94                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{95             \}}
+\DoxyCodeLine{96             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& s : sortedStudents) \{}
+\DoxyCodeLine{97                 \textcolor{keywordflow}{if} (yearChoice == \textcolor{stringliteral}{"{}0"{}})\{}
+\DoxyCodeLine{98                     s.printStudent();}
+\DoxyCodeLine{99                 \}}
+\DoxyCodeLine{100                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{101                     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} ucCl : s.getIsIn())\{}
+\DoxyCodeLine{102                         \textcolor{keywordtype}{string} str = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{103                         str += (ucCl.second[0]);}
+\DoxyCodeLine{104                         \textcolor{keywordflow}{if} (str == yearChoice)\{}
+\DoxyCodeLine{105                             s.printStudent();}
+\DoxyCodeLine{106                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{107                         \}}
+\DoxyCodeLine{108                     \}}
+\DoxyCodeLine{109                 \}}
+\DoxyCodeLine{110             \}}
+\DoxyCodeLine{111         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (contentChoice == \textcolor{stringliteral}{"{}2"{}} \&\& orderChoice == \textcolor{stringliteral}{"{}1"{}}) \{}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& s : sortedStudents) \{}
+\DoxyCodeLine{114                 s.printStudent();}
+\DoxyCodeLine{115                 s.printStudentIsIn();}
+\DoxyCodeLine{116                 cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{117             \}}
+\DoxyCodeLine{118         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (contentChoice == \textcolor{stringliteral}{"{}1"{}} \&\& orderChoice == \textcolor{stringliteral}{"{}2"{}}) \{}
+\DoxyCodeLine{119             cout << \textcolor{stringliteral}{"{}\(\backslash\)nEscolha o ano que quer ver:\(\backslash\)n"{}};}
+\DoxyCodeLine{120             cout << \textcolor{stringliteral}{"{}1 -\/ Primeiro ano\(\backslash\)n"{}};}
+\DoxyCodeLine{121             cout << \textcolor{stringliteral}{"{}2 -\/ Segundo ano\(\backslash\)n"{}};}
+\DoxyCodeLine{122             cout << \textcolor{stringliteral}{"{}3 -\/ Terceiro ano\(\backslash\)n"{}};}
+\DoxyCodeLine{123             cout << \textcolor{stringliteral}{"{}0 -\/ Todos os anos\(\backslash\)n"{}};}
+\DoxyCodeLine{124             cout << \textcolor{stringliteral}{"{}Digite sua escolha: "{}};}
+\DoxyCodeLine{125             cin >> yearChoice; \textcolor{comment}{//impleemtnara}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127             \textcolor{keywordflow}{if} (!(yearChoice == \textcolor{stringliteral}{"{}0"{}} || yearChoice == \textcolor{stringliteral}{"{}1"{}} || yearChoice == \textcolor{stringliteral}{"{}2"{}} || yearChoice == \textcolor{stringliteral}{"{}3"{}} ))\{}
+\DoxyCodeLine{128                 cout << \textcolor{stringliteral}{"{}Escolha inválida."{}};}
+\DoxyCodeLine{129                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{130             \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& s : *students) \{}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{if} (yearChoice == \textcolor{stringliteral}{"{}0"{}})\{}
+\DoxyCodeLine{134                     s.printStudent();}
+\DoxyCodeLine{135                 \}}
+\DoxyCodeLine{136                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{137                     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} ucCl : s.getIsIn())\{}
+\DoxyCodeLine{138                         \textcolor{keywordtype}{string} str = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{139                         str += (ucCl.second[0]);}
+\DoxyCodeLine{140                         \textcolor{keywordflow}{if} (str == yearChoice)\{}
+\DoxyCodeLine{141                             s.printStudent();}
+\DoxyCodeLine{142                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{143                         \}}
+\DoxyCodeLine{144                     \}}
+\DoxyCodeLine{145                 \}}
+\DoxyCodeLine{146             \}}
+\DoxyCodeLine{147         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (contentChoice == \textcolor{stringliteral}{"{}2"{}} \&\& orderChoice == \textcolor{stringliteral}{"{}2"{}}) \{}
+\DoxyCodeLine{148             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& s : *students) \{}
+\DoxyCodeLine{149                 s.printStudent();}
+\DoxyCodeLine{150                 s.printStudentIsIn();}
+\DoxyCodeLine{151                 cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{152             \}}
+\DoxyCodeLine{153         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (contentChoice == \textcolor{stringliteral}{"{}0"{}}) \{}
+\DoxyCodeLine{154             cout << \textcolor{stringliteral}{"{}A voltar para o menu inicial. Obrigado!\(\backslash\)n"{}};}
+\DoxyCodeLine{155             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{156         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{157             cout << \textcolor{stringliteral}{"{}Escolha inválida. Por favor, tente novamente.\(\backslash\)n"{}};}
+\DoxyCodeLine{158         \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \} \textcolor{keywordflow}{while} (contentChoice != \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{161 \}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{void} \mbox{\hyperlink{Menu_8h_ab71bbc6d90e05e1afdeb2f45188aa14e}{verUcClassStudent}}(vector<Uc> *ucs, vector<Student> *students)\{}
+\DoxyCodeLine{174     \textcolor{comment}{//print all classes and students enrroled}}
+\DoxyCodeLine{175     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classUc}{Uc}}\& uc: *ucs) \{}
+\DoxyCodeLine{176         cout << \textcolor{stringliteral}{"{}\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"{}} << endl << \textcolor{stringliteral}{"{}UC: "{}} << uc.getCode() << endl;}
+\DoxyCodeLine{177         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classClasss}{Classs}}\& c: uc.getClassses()) \{}
+\DoxyCodeLine{178             cout << \textcolor{stringliteral}{"{}\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"{}} << endl << \textcolor{stringliteral}{"{}\(\backslash\)tClass: "{}} << c.getCode() << endl ;}
+\DoxyCodeLine{179             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& s: c.getStudents())\{}
+\DoxyCodeLine{180                 cout << \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t\(\backslash\)tNome: "{}} << s.getName() << \textcolor{stringliteral}{"{}, Número: "{}} << s.getNumber() << endl;}
+\DoxyCodeLine{181             \}}
+\DoxyCodeLine{182         \}}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184 \}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{196 \textcolor{keywordtype}{void} \mbox{\hyperlink{Menu_8h_a53aed4e821f0af8025f6893913d94e5e}{verTodasClasses}}(vector<Uc> *ucs, vector<Student> *students) \{}
+\DoxyCodeLine{197     \textcolor{comment}{//prints every class schdule of a certain UC}}
+\DoxyCodeLine{198     \textcolor{keywordtype}{string} choice;}
+\DoxyCodeLine{199     \textcolor{keywordtype}{bool} existe = \textcolor{keyword}{false};}
+\DoxyCodeLine{200     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{201         cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n\(\backslash\)nDigite o código da UC:\(\backslash\)nExemplo: L.EIC001 \(\backslash\)nOu digite '0' para regressar ao menu: \(\backslash\)n"{}};}
+\DoxyCodeLine{202         cin >> choice;}
+\DoxyCodeLine{203         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classUc}{Uc}}\& uc : *ucs)\{ \textcolor{comment}{//find the required UC}}
+\DoxyCodeLine{204             \textcolor{keywordflow}{if} (choice == uc.getCode()) \{}
+\DoxyCodeLine{205                 existe = \textcolor{keyword}{true};}
+\DoxyCodeLine{206                 cout << \textcolor{stringliteral}{"{}UC : "{}} << uc.getCode() << endl;}
+\DoxyCodeLine{207                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} classs: uc.getClassses()) \{ \textcolor{comment}{//iterate over every class of the UC}}
+\DoxyCodeLine{208                     cout << \textcolor{stringliteral}{"{}\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"{}} << endl;}
+\DoxyCodeLine{209                     classs.printAula(); \textcolor{comment}{//print its schedule}}
+\DoxyCodeLine{210                 \}}
+\DoxyCodeLine{211             \}}
+\DoxyCodeLine{212         \}}
+\DoxyCodeLine{213         \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}0"{}} || existe)\{}
+\DoxyCodeLine{214             existe = \textcolor{keyword}{true};}
+\DoxyCodeLine{215         \}}
+\DoxyCodeLine{216         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{217             cout << \textcolor{stringliteral}{"{}Escolha inválida. Por favor, tente novamente."{}} << endl;}
+\DoxyCodeLine{218         \}}
+\DoxyCodeLine{219     \} \textcolor{keywordflow}{while} (!existe);}
+\DoxyCodeLine{220 \}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{233 \textcolor{keywordtype}{void} \mbox{\hyperlink{Menu_8h_ae4b0f7c8bfb183e510e882e89afa840f}{infoSobreEstudante}}(vector<Uc> *ucs, vector<Student> *students) \{}
+\DoxyCodeLine{234     \textcolor{comment}{// Código para exibir informações sobre um estudante específico}}
+\DoxyCodeLine{235     \textcolor{keywordtype}{bool} existe = \textcolor{keyword}{false};}
+\DoxyCodeLine{236     \textcolor{keywordtype}{int} meca;}
+\DoxyCodeLine{237     cout << \textcolor{stringliteral}{"{}\(\backslash\)nDigite o número mecanográfico do estudante:"{}}; \textcolor{comment}{// ou 0 para voltar atras}}
+\DoxyCodeLine{238     \textcolor{keywordflow}{if} (cin >> meca)\{}
+\DoxyCodeLine{239         set<Student> sortedStudents; \textcolor{comment}{//set of students to make search O(log n)}}
+\DoxyCodeLine{240         sortedStudents.clear();}
+\DoxyCodeLine{241         sortedStudents.insert(students-\/>begin(), students-\/>end());}
+\DoxyCodeLine{242         \textcolor{keyword}{auto} it = find\_if(sortedStudents.begin(), sortedStudents.end(), [meca](\textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& student) \{}
+\DoxyCodeLine{243             return student.getNumber() == meca;}
+\DoxyCodeLine{244         \});}
+\DoxyCodeLine{245         \textcolor{keywordflow}{if} (it != sortedStudents.end()) \{ \textcolor{comment}{//if student was found}}
+\DoxyCodeLine{246             \textcolor{keyword}{const} \mbox{\hyperlink{classStudent}{Student}}\& s = *it;}
+\DoxyCodeLine{247             existe = \textcolor{keyword}{true};}
+\DoxyCodeLine{248             \textcolor{keywordtype}{string} choice;}
+\DoxyCodeLine{249             \textcolor{comment}{//present more choices to user}}
+\DoxyCodeLine{250             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{251                 cout << endl;}
+\DoxyCodeLine{252                 s.\mbox{\hyperlink{classStudent_af5508431b49939874cb61a1ece491e0b}{printStudent}}();}
+\DoxyCodeLine{253                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nOpções:"{}} << endl;}
+\DoxyCodeLine{254                 cout << \textcolor{stringliteral}{"{}1 -\/ Ver horário do estudante"{}} << endl;}
+\DoxyCodeLine{255                 cout << \textcolor{stringliteral}{"{}2 -\/ Ver cadeiras que frequenta"{}} << endl;}
+\DoxyCodeLine{256                 cout << \textcolor{stringliteral}{"{}0 -\/ Voltar ao menu principal"{}} << endl;}
+\DoxyCodeLine{257                 cout << \textcolor{stringliteral}{"{}Escolha uma opção: "{}};}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259                 \textcolor{keywordflow}{if} (cin >> choice) \{}
+\DoxyCodeLine{260                     \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}1"{}}) \{}
+\DoxyCodeLine{261                         \textcolor{comment}{//Print student's schedule}}
+\DoxyCodeLine{262                         \mbox{\hyperlink{AuxiliarFunctions_8h_adae90ee7f26a97809610f4107ef8dec9}{printSchedule}}(s.\mbox{\hyperlink{classStudent_a4bbb17e54054460ceffd29568dd19a52}{getIsIn}}(), ucs);}
+\DoxyCodeLine{263                         \textcolor{keywordtype}{int} cont = 0;}
+\DoxyCodeLine{264                         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p : \mbox{\hyperlink{AuxiliarFunctions_8h_aefb1e0814c17d7beb98692b86f05863d}{overlappedClasses}}(s, *ucs))\{ \textcolor{comment}{//check for overlapped classes}}
+\DoxyCodeLine{265                             \textcolor{keywordflow}{if} (cont == 0)cout << \textcolor{stringliteral}{"{}\(\backslash\)nAulas sobrepostas:\(\backslash\)n"{}};}
+\DoxyCodeLine{266                             cont ++;}
+\DoxyCodeLine{267                             cout << \textcolor{stringliteral}{"{}\(\backslash\)tUC : "{}} << p.second.first << \textcolor{stringliteral}{"{}  ||  Turma: "{}} << p.second.second << endl;}
+\DoxyCodeLine{268                             cout << \textcolor{stringliteral}{"{}\(\backslash\)tDia da semana: "{}} << p.first.weekDay << \textcolor{stringliteral}{"{} , Início: "{}} << p.first.start << \textcolor{stringliteral}{"{},Fim: "{}} << p.first.end << \textcolor{stringliteral}{"{},Tipo: "{}} << p.first.type << endl << endl;}
+\DoxyCodeLine{269                         \}}
+\DoxyCodeLine{270                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}2"{}}) \{}
+\DoxyCodeLine{271                         \textcolor{comment}{//print UC and Classes that is enrolled in}}
+\DoxyCodeLine{272                         s.\mbox{\hyperlink{classStudent_a829beeab5d3ff33ad2931d80f1aad042}{printStudentIsIn}}();}
+\DoxyCodeLine{273                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}0"{}}) \{}
+\DoxyCodeLine{274                         cout << \textcolor{stringliteral}{"{}A voltar ao menu inicial. Obrigado!\(\backslash\)n"{}} << endl;}
+\DoxyCodeLine{275                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{276                         cout << \textcolor{stringliteral}{"{}Escolha inválida. Por favor, tente novamente."{}} << endl;}
+\DoxyCodeLine{277                     \}}
+\DoxyCodeLine{278                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{279                     cout << \textcolor{stringliteral}{"{}Escolha inválida. Por favor, digite um número."{}} << endl;}
+\DoxyCodeLine{280                     cin.clear();}
+\DoxyCodeLine{281                 \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283             \} \textcolor{keywordflow}{while} (choice != \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{284         \}}
+\DoxyCodeLine{285         \textcolor{keywordflow}{if} (!existe) cout << \textcolor{stringliteral}{"{}Não existe nenhum aluno com esse número mecanográfico.\(\backslash\)n"{}};}
+\DoxyCodeLine{286     \}}
+\DoxyCodeLine{287     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{288         cout << \textcolor{stringliteral}{"{}\(\backslash\)nDigite um número mecanográfico válido."{}} << endl;}
+\DoxyCodeLine{289         cin.clear();}
+\DoxyCodeLine{290         cin.ignore(numeric\_limits<streamsize>::max(), \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{291         \mbox{\hyperlink{Menu_8h_ae4b0f7c8bfb183e510e882e89afa840f}{infoSobreEstudante}}(ucs, students);}
+\DoxyCodeLine{292     \}}
+\DoxyCodeLine{293 \}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{305 \textcolor{keywordtype}{void} \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(vector<Uc> *ucs, vector<Student> *students) \{}
+\DoxyCodeLine{306     \textcolor{comment}{// Código para processar uma requisição}}
+\DoxyCodeLine{307     \textcolor{keywordtype}{bool} existe = \textcolor{keyword}{false}; \textcolor{comment}{//boolean to check if the student we're looking for exists}}
+\DoxyCodeLine{308     \textcolor{keywordtype}{bool} sucess = \textcolor{keyword}{false}; \textcolor{comment}{//boolean to access the success of the request}}
+\DoxyCodeLine{309     \textcolor{keywordtype}{bool} sucessButNotPossible = \textcolor{keyword}{false}; \textcolor{comment}{//boolean that accesses if the request was made but denied by the system (p.e. class was full)}}
+\DoxyCodeLine{310     \textcolor{keywordtype}{bool} contin = \textcolor{keyword}{false}; \textcolor{comment}{//boolean to avoid printing extra warnings when the inputs are not valid}}
+\DoxyCodeLine{311     \textcolor{keywordtype}{int} meca;}
+\DoxyCodeLine{312     cout << \textcolor{stringliteral}{"{}\(\backslash\)nDigite o número mecanográfico do estudante ou digite 0 para regressar ao menu principal: "{}};}
+\DoxyCodeLine{313     \textcolor{keywordflow}{if} (cin >> meca)\{}
+\DoxyCodeLine{314         \textcolor{keywordflow}{if} (meca == 0);}
+\DoxyCodeLine{315         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{316             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classStudent}{Student}}\& s : *students)\{ \textcolor{comment}{//find the desired student}}
+\DoxyCodeLine{317                 \textcolor{keywordflow}{if} (s.getNumber() == meca)\{}
+\DoxyCodeLine{318                     existe = \textcolor{keyword}{true};}
+\DoxyCodeLine{319                     \textcolor{keywordtype}{string} choice;}
+\DoxyCodeLine{320                     cout << endl;}
+\DoxyCodeLine{321                     s.printStudent();}
+\DoxyCodeLine{322                     cout << endl;}
+\DoxyCodeLine{323                     \textcolor{keywordtype}{string} requestType, targetUc, atualClass, finalClass;}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325                     \textcolor{comment}{// Collect information from the user}}
+\DoxyCodeLine{326                     cout << \textcolor{stringliteral}{"{}Introduzir o tipo de requisição (add, remove, switch): "{}};}
+\DoxyCodeLine{327                     cin >> requestType;}
+\DoxyCodeLine{328                     \textcolor{keywordflow}{if} (requestType == \textcolor{stringliteral}{"{}add"{}})\{}
+\DoxyCodeLine{329                         cout << \textcolor{stringliteral}{"{}Introduz a UC em que te queres inscrever: "{}};}
+\DoxyCodeLine{330                         cin >> targetUc;}
+\DoxyCodeLine{331                         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classUc}{Uc}}\& uc : *ucs)\{ \textcolor{comment}{//find the desired UC}}
+\DoxyCodeLine{332                             \textcolor{keywordflow}{if} (uc.getCode() == targetUc)\{}
+\DoxyCodeLine{333                                 \textcolor{keywordtype}{bool} alreadyInUc = \textcolor{keyword}{false};}
+\DoxyCodeLine{334                                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& p : s.getIsIn())\{ \textcolor{comment}{//Check if student isn't already there, bc student can't be in two or more classes in the UC}}
+\DoxyCodeLine{335                                     \textcolor{keywordflow}{if} (targetUc == p.first) alreadyInUc = \textcolor{keyword}{true};}
+\DoxyCodeLine{336                                 \}}
+\DoxyCodeLine{337                                 \textcolor{keywordflow}{if} (!alreadyInUc)\{}
+\DoxyCodeLine{338                                     \textcolor{keywordflow}{if} (uc.addUc(s, *ucs))\{ \textcolor{comment}{//process the add request}}
+\DoxyCodeLine{339                                         sucess = \textcolor{keyword}{true};}
+\DoxyCodeLine{340                                     \}}
+\DoxyCodeLine{341                                     \textcolor{keywordflow}{else} sucessButNotPossible = \textcolor{keyword}{true};}
+\DoxyCodeLine{342                                 \}}
+\DoxyCodeLine{343                                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{344                                     cout << \textcolor{stringliteral}{"{}O estudante já está nessa UC, selecione outra opção:\(\backslash\)n"{}};}
+\DoxyCodeLine{345                                     \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(ucs, students);}
+\DoxyCodeLine{346                                     contin = \textcolor{keyword}{true};}
+\DoxyCodeLine{347                                 \}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349                             \}}
+\DoxyCodeLine{350                         \}}
+\DoxyCodeLine{351                     \}}
+\DoxyCodeLine{352                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (requestType == \textcolor{stringliteral}{"{}remove"{}})\{}
+\DoxyCodeLine{353                         cout << \textcolor{stringliteral}{"{}Introduz a UC que queres anular: "{}};}
+\DoxyCodeLine{354                         cin >> targetUc;}
+\DoxyCodeLine{355                         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classUc}{Uc}}\& uc : *ucs)\{ \textcolor{comment}{//find the desired UC}}
+\DoxyCodeLine{356                             \textcolor{keywordflow}{if} (uc.getCode() == targetUc)\{}
+\DoxyCodeLine{357                                 \textcolor{keywordtype}{bool} InUc = \textcolor{keyword}{false};}
+\DoxyCodeLine{358                                 \textcolor{keywordtype}{string} clCode;}
+\DoxyCodeLine{359                                 \mbox{\hyperlink{classClasss}{Classs}} atualClasss;}
+\DoxyCodeLine{360                                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& p : s.getIsIn())\{ \textcolor{comment}{//Check if student is in the UC we want to remove it from}}
+\DoxyCodeLine{361                                     \textcolor{keywordflow}{if} (targetUc == p.first) \{}
+\DoxyCodeLine{362                                         clCode = p.second;}
+\DoxyCodeLine{363                                         InUc = \textcolor{keyword}{true};}
+\DoxyCodeLine{364                                     \}}
+\DoxyCodeLine{365                                 \}}
+\DoxyCodeLine{366                                 \textcolor{keywordflow}{if} (InUc)\{}
+\DoxyCodeLine{367                                     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{classClasss}{Classs}}\& classs : uc.getClassses())\{}
+\DoxyCodeLine{368                                         \textcolor{keywordflow}{if} (classs.getCode() == clCode) atualClasss = classs;}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370                                     \}}
+\DoxyCodeLine{371                                     \textcolor{keywordflow}{if} (uc.removeUc(s, *ucs, atualClasss))\{ \textcolor{comment}{//Process the remove request}}
+\DoxyCodeLine{372                                         sucess = \textcolor{keyword}{true};}
+\DoxyCodeLine{373                                     \}}
+\DoxyCodeLine{374                                     \textcolor{keywordflow}{else} sucessButNotPossible = \textcolor{keyword}{true};}
+\DoxyCodeLine{375                                 \}}
+\DoxyCodeLine{376                                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{377                                     cout << \textcolor{stringliteral}{"{}O estudante não está nessa UC, selecione outra opção:\(\backslash\)n"{}};}
+\DoxyCodeLine{378                                     \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(ucs, students);}
+\DoxyCodeLine{379                                     contin = \textcolor{keyword}{true};}
+\DoxyCodeLine{380                                 \}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382                             \}}
+\DoxyCodeLine{383                         \}}
+\DoxyCodeLine{384                     \}}
+\DoxyCodeLine{385                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (requestType == \textcolor{stringliteral}{"{}switch"{}})\{}
+\DoxyCodeLine{386                         cout << \textcolor{stringliteral}{"{}Introduz a UC a que queres mudar de turma: "{}};}
+\DoxyCodeLine{387                         cin >> targetUc;}
+\DoxyCodeLine{388                         \textcolor{keywordflow}{for} ( \mbox{\hyperlink{classUc}{Uc}}\& uc : *ucs )\{ \textcolor{comment}{//find the desired UC}}
+\DoxyCodeLine{389                             \textcolor{keywordflow}{if} (uc.getCode() == targetUc)\{}
+\DoxyCodeLine{390                                 cout << \textcolor{stringliteral}{"{}Introduz a tua turma atual: "{}};}
+\DoxyCodeLine{391                                 cin >> atualClass;}
+\DoxyCodeLine{392                                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} \&clatual : uc.getClassses())\{ \textcolor{comment}{//Find the actual class and check if the student is there}}
+\DoxyCodeLine{393                                     \textcolor{keywordflow}{if} (clatual.getCode() == atualClass)\{}
+\DoxyCodeLine{394                                         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p : s.getIsIn())\{}
+\DoxyCodeLine{395                                             \textcolor{keywordflow}{if} ( targetUc == p.first \&\& atualClass == p.second)\{ \textcolor{comment}{// Checks if student is in targerUc in class atualClass}}
+\DoxyCodeLine{396                                                 cout << \textcolor{stringliteral}{"{}Introduz a tua turma para que quer ir: "{}};}
+\DoxyCodeLine{397                                                 cin >> finalClass;}
+\DoxyCodeLine{398                                                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} clfinal : uc.getClassses())\{ \textcolor{comment}{//finds the class that the students wants to go}}
+\DoxyCodeLine{399                                                     \textcolor{keywordflow}{if} (clfinal.getCode() == finalClass)\{ \textcolor{comment}{//checks if he isn't already there}}
+\DoxyCodeLine{400                                                         \textcolor{keywordflow}{if} (finalClass == atualClass) cout << \textcolor{stringliteral}{"{}O estudante já está nessa turma."{}} << endl;}
+\DoxyCodeLine{401                                                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{402                                                             \textcolor{keywordflow}{if} (uc.switchClass(s, *ucs, *students, clatual, finalClass))\{ \textcolor{comment}{//Process the request}}
+\DoxyCodeLine{403                                                                 sucess = \textcolor{keyword}{true};}
+\DoxyCodeLine{404                                                             \}}
+\DoxyCodeLine{405                                                             \textcolor{keywordflow}{else} sucessButNotPossible = \textcolor{keyword}{true};}
+\DoxyCodeLine{406                                                         \}}
+\DoxyCodeLine{407                                                     \}}
+\DoxyCodeLine{408                                                 \}}
+\DoxyCodeLine{409                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{410                                             \}}
+\DoxyCodeLine{411                                         \}}
+\DoxyCodeLine{412                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{413                                     \}}
+\DoxyCodeLine{414                                 \}}
+\DoxyCodeLine{415                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{416                             \}}
+\DoxyCodeLine{417                         \}}
+\DoxyCodeLine{418                     \}}
+\DoxyCodeLine{419                     \textcolor{keywordflow}{else} \{ \textcolor{comment}{//O user não escolher "{}add"{} ou "{}remove"{} ou "{}switch"{}}}
+\DoxyCodeLine{420                         cout << \textcolor{stringliteral}{"{}\(\backslash\)nSeleciona um tipo válido.\(\backslash\)n"{}};}
+\DoxyCodeLine{421                         sucess = \textcolor{keyword}{true};}
+\DoxyCodeLine{422                         \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(ucs, students);}
+\DoxyCodeLine{423                         contin = \textcolor{keyword}{true};}
+\DoxyCodeLine{424                     \}}
+\DoxyCodeLine{425                 \}}
+\DoxyCodeLine{426             \}}
+\DoxyCodeLine{427             \textcolor{keywordflow}{if} (contin)\{\} \textcolor{comment}{//avoid printing extra errors}}
+\DoxyCodeLine{428             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!existe) \{ \textcolor{comment}{//Checks if student was found}}
+\DoxyCodeLine{429                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nNão existe nenhum aluno com esse número mecanográfico.\(\backslash\)n"{}};}
+\DoxyCodeLine{430                 \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(ucs, students);}
+\DoxyCodeLine{431                 contin = \textcolor{keyword}{true};}
+\DoxyCodeLine{432             \}}
+\DoxyCodeLine{433             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sucessButNotPossible)\{ \textcolor{comment}{//checks if the request was made but not accepted}}
+\DoxyCodeLine{434                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nNão foi possível processar a requisição.\(\backslash\)nOu a turma está cheia, ou a transferência causa discrepância na distribuição dos alunos, ou o os horários não são compatíveis, ou o aluno não é elegível para entrar na turma.\(\backslash\)n"{}};}
+\DoxyCodeLine{435             \}}
+\DoxyCodeLine{436             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!sucess) \{ \textcolor{comment}{//Checks if the request wasn't made}}
+\DoxyCodeLine{437                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nAlgo correu mal, verifique se existe a UC ou a turma/s que introduziu.\(\backslash\)n"{}};}
+\DoxyCodeLine{438                 \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(ucs, students);}
+\DoxyCodeLine{439                 contin = \textcolor{keyword}{true};}
+\DoxyCodeLine{440             \}}
+\DoxyCodeLine{441             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sucess)\{ \textcolor{comment}{//checks full sucess of the request}}
+\DoxyCodeLine{442                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nA sua requisição foi efetuada com sucesso!\(\backslash\)n"{}};}
+\DoxyCodeLine{443             \}}
+\DoxyCodeLine{444         \}}
+\DoxyCodeLine{445     \}}
+\DoxyCodeLine{446     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{447         cout << \textcolor{stringliteral}{"{}\(\backslash\)nDigite um número mecanográfico válido."{}} << endl;}
+\DoxyCodeLine{448         cin.clear();}
+\DoxyCodeLine{449         cin.ignore(numeric\_limits<streamsize>::max(), \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{450         \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(ucs, students);}
+\DoxyCodeLine{451         contin = \textcolor{keyword}{true};}
+\DoxyCodeLine{452     \}}
+\DoxyCodeLine{453 \}}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{465 \textcolor{keywordtype}{void} \mbox{\hyperlink{Menu_8h_aee5849044f4ad614df09e87de31f1559}{undoRequisicao}}(vector<Uc> *ucs, vector<Student> *students)\{}
+\DoxyCodeLine{466     \textcolor{comment}{//Undo the last request}}
+\DoxyCodeLine{467     stack<Opperation> requests = \mbox{\hyperlink{AuxiliarFunctions_8h_acb47f4956f4de2e2cc3e1774dd206550}{loadRequests}}();}
+\DoxyCodeLine{468     queue<Opperation> queueRequests;}
+\DoxyCodeLine{469     \mbox{\hyperlink{structOpperation}{Opperation}} Request = requests.top();}
+\DoxyCodeLine{470     queueRequests.push(Request);}
+\DoxyCodeLine{471     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{false};}
+\DoxyCodeLine{472     cout << \textcolor{stringliteral}{"{}\(\backslash\)nA última requisição executada foi: "{}} << endl;}
+\DoxyCodeLine{473     \textcolor{keywordtype}{string} undoChoice;}
+\DoxyCodeLine{474     \mbox{\hyperlink{structOpperation}{Opperation}} lastRequest = queueRequests.front();}
+\DoxyCodeLine{475     \textcolor{keywordflow}{if} (lastRequest.\mbox{\hyperlink{structOpperation_ac51e19ef8878c825c13570a846c127a9}{type}} == \textcolor{stringliteral}{"{}add"{}})\{}
+\DoxyCodeLine{476         cout << \textcolor{stringliteral}{"{}Adicionar o Estudante número: "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a23c983c0e46df5ddb1339d6e1bd2f524}{meca}} << \textcolor{stringliteral}{"{} à turma "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a56ac27fffaed8ffeaaaef108cd8efb4b}{classFinal}} <<}
+\DoxyCodeLine{477             \textcolor{stringliteral}{"{} da UC "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a17c8d7f1f37c7674e4bfd161504583dd}{ucCode}} << endl;}
+\DoxyCodeLine{478         cout << \textcolor{stringliteral}{"{}Pretende fazer undo? (s/n)"{}} << endl;}
+\DoxyCodeLine{479         cin >> undoChoice;}
+\DoxyCodeLine{480         \textcolor{keywordflow}{if} (undoChoice == \textcolor{stringliteral}{"{}s"{}})\{}
+\DoxyCodeLine{481             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classStudent}{Student}}\& student : *students)\{ \textcolor{comment}{//find the desired student}}
+\DoxyCodeLine{482                 \textcolor{keywordflow}{if} (student.getNumber() == stoi(lastRequest.\mbox{\hyperlink{structOpperation_a23c983c0e46df5ddb1339d6e1bd2f524}{meca}}))\{}
+\DoxyCodeLine{483                     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classUc}{Uc}}\& uc : *ucs)\{ \textcolor{comment}{//find the desired UC}}
+\DoxyCodeLine{484                         \textcolor{keywordflow}{if} (uc.getCode() == lastRequest.\mbox{\hyperlink{structOpperation_a17c8d7f1f37c7674e4bfd161504583dd}{ucCode}})\{}
+\DoxyCodeLine{485                             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} classs : uc.getClassses())\{ \textcolor{comment}{//find the desired class}}
+\DoxyCodeLine{486                                 \textcolor{keywordflow}{if} (classs.getCode() == lastRequest.\mbox{\hyperlink{structOpperation_a56ac27fffaed8ffeaaaef108cd8efb4b}{classFinal}})\{}
+\DoxyCodeLine{487                                     \textcolor{keywordflow}{if} (uc.removeUc(student, *ucs, classs))\{ \textcolor{comment}{//try to undo request}}
+\DoxyCodeLine{488                                         success = \textcolor{keyword}{true};}
+\DoxyCodeLine{489                                     \}}
+\DoxyCodeLine{490                                 \}}
+\DoxyCodeLine{491                             \}}
+\DoxyCodeLine{492                         \}}
+\DoxyCodeLine{493                     \}}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495                 \}}
+\DoxyCodeLine{496             \}}
+\DoxyCodeLine{497         \}}
+\DoxyCodeLine{498         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{499             cout << \textcolor{stringliteral}{"{}A voltar para o menu principal"{}} << endl;}
+\DoxyCodeLine{500         \}}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502     \}}
+\DoxyCodeLine{503     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lastRequest.\mbox{\hyperlink{structOpperation_ac51e19ef8878c825c13570a846c127a9}{type}} == \textcolor{stringliteral}{"{}remove"{}})\{}
+\DoxyCodeLine{504         cout << \textcolor{stringliteral}{"{}Remover o Estudante número: "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a23c983c0e46df5ddb1339d6e1bd2f524}{meca}} << \textcolor{stringliteral}{"{} da turma "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a723c574b7ae3d3571c244aaa6bee3933}{classOrigin}} <<}
+\DoxyCodeLine{505             \textcolor{stringliteral}{"{} da UC "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a17c8d7f1f37c7674e4bfd161504583dd}{ucCode}} << endl;}
+\DoxyCodeLine{506         cout << \textcolor{stringliteral}{"{}Pretende fazer undo? (s/n)"{}} << endl;}
+\DoxyCodeLine{507         cin >> undoChoice;}
+\DoxyCodeLine{508         \textcolor{keywordflow}{if} (undoChoice == \textcolor{stringliteral}{"{}s"{}})\{}
+\DoxyCodeLine{509             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classStudent}{Student}}\& student : *students)\{ \textcolor{comment}{//find desired student}}
+\DoxyCodeLine{510                 \textcolor{keywordflow}{if} (student.getNumber() == stoi(lastRequest.\mbox{\hyperlink{structOpperation_a23c983c0e46df5ddb1339d6e1bd2f524}{meca}}))\{}
+\DoxyCodeLine{511                     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classUc}{Uc}}\& uc : *ucs)\{ \textcolor{comment}{//find desired UC}}
+\DoxyCodeLine{512                         \textcolor{keywordflow}{if} (uc.getCode() == lastRequest.\mbox{\hyperlink{structOpperation_a17c8d7f1f37c7674e4bfd161504583dd}{ucCode}})\{}
+\DoxyCodeLine{513                             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} classs : uc.getClassses())\{ \textcolor{comment}{//find desired Class}}
+\DoxyCodeLine{514                                 \textcolor{keywordflow}{if} (classs.getCode() == lastRequest.\mbox{\hyperlink{structOpperation_a723c574b7ae3d3571c244aaa6bee3933}{classOrigin}})\{}
+\DoxyCodeLine{515                                     \textcolor{keywordflow}{if} (uc.addUc(student, *ucs))\{ \textcolor{comment}{//try to undo request}}
+\DoxyCodeLine{516                                         success = \textcolor{keyword}{true};}
+\DoxyCodeLine{517                                     \}}
+\DoxyCodeLine{518                                 \}}
+\DoxyCodeLine{519                             \}}
+\DoxyCodeLine{520                         \}}
+\DoxyCodeLine{521                     \}}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523                 \}}
+\DoxyCodeLine{524             \}}
+\DoxyCodeLine{525         \}}
+\DoxyCodeLine{526         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{527             cout << \textcolor{stringliteral}{"{}A voltar para o menu principal"{}} << endl;}
+\DoxyCodeLine{528         \}}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{530     \}}
+\DoxyCodeLine{531     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lastRequest.\mbox{\hyperlink{structOpperation_ac51e19ef8878c825c13570a846c127a9}{type}} == \textcolor{stringliteral}{"{}switch"{}})\{}
+\DoxyCodeLine{532         cout << \textcolor{stringliteral}{"{}O Estudante número: "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a23c983c0e46df5ddb1339d6e1bd2f524}{meca}} << \textcolor{stringliteral}{"{} trocou da turma "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a723c574b7ae3d3571c244aaa6bee3933}{classOrigin}} <<}
+\DoxyCodeLine{533             \textcolor{stringliteral}{"{} para a turma "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a56ac27fffaed8ffeaaaef108cd8efb4b}{classFinal}} << \textcolor{stringliteral}{"{} da UC "{}} << lastRequest.\mbox{\hyperlink{structOpperation_a17c8d7f1f37c7674e4bfd161504583dd}{ucCode}} << endl;}
+\DoxyCodeLine{534         cout << \textcolor{stringliteral}{"{}Pretende fazer undo? (s/n)"{}} << endl;}
+\DoxyCodeLine{535         cin >> undoChoice;}
+\DoxyCodeLine{536         \textcolor{keywordflow}{if} (undoChoice == \textcolor{stringliteral}{"{}s"{}})\{}
+\DoxyCodeLine{537             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classStudent}{Student}}\& student : *students)\{ \textcolor{comment}{//find desired student}}
+\DoxyCodeLine{538                 \textcolor{keywordflow}{if} (student.getNumber() == stoi(lastRequest.\mbox{\hyperlink{structOpperation_a23c983c0e46df5ddb1339d6e1bd2f524}{meca}}))\{}
+\DoxyCodeLine{539                     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classUc}{Uc}}\& uc : *ucs)\{ \textcolor{comment}{//find desired UC}}
+\DoxyCodeLine{540                         \textcolor{keywordflow}{if} (uc.getCode() == lastRequest.\mbox{\hyperlink{structOpperation_a17c8d7f1f37c7674e4bfd161504583dd}{ucCode}})\{}
+\DoxyCodeLine{541                             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} \&classs : uc.getClassses())\{ \textcolor{comment}{//find desired Class}}
+\DoxyCodeLine{542                                 \textcolor{keywordflow}{if} (classs.getCode() == lastRequest.\mbox{\hyperlink{structOpperation_a56ac27fffaed8ffeaaaef108cd8efb4b}{classFinal}})\{}
+\DoxyCodeLine{543                                     \textcolor{keywordflow}{if} (uc.switchClass(student, *ucs, *students, classs, lastRequest.\mbox{\hyperlink{structOpperation_a723c574b7ae3d3571c244aaa6bee3933}{classOrigin}}))\{ \textcolor{comment}{//try to undo request}}
+\DoxyCodeLine{544                                         success = \textcolor{keyword}{true};}
+\DoxyCodeLine{545                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{546                                     \}}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548                                 \}}
+\DoxyCodeLine{549                             \}}
+\DoxyCodeLine{550                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{551                         \}}
+\DoxyCodeLine{552                     \}}
+\DoxyCodeLine{553                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555                 \}}
+\DoxyCodeLine{556             \}}
+\DoxyCodeLine{557         \}}
+\DoxyCodeLine{558         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{559             cout << \textcolor{stringliteral}{"{}A voltar para o menu principal"{}} << endl;}
+\DoxyCodeLine{560         \}}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562     \}}
+\DoxyCodeLine{563     \textcolor{keywordflow}{if} (success) \{ \textcolor{comment}{//access the success of the undo}}
+\DoxyCodeLine{564         cout << \textcolor{stringliteral}{"{}Undo efetuado com sucesso!\(\backslash\)n"{}};}
+\DoxyCodeLine{565         queueRequests.pop();}
+\DoxyCodeLine{566         \mbox{\hyperlink{AuxiliarFunctions_8h_a2733b4196e48f025c2779c2f2299a8e5}{undoSuccessful}}(); \textcolor{comment}{//removes the opperation from the csv that holds the opperations}}
+\DoxyCodeLine{567     \}}
+\DoxyCodeLine{568     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{569         cout << \textcolor{stringliteral}{"{}Não foi possível realizar o undo.\(\backslash\)nOu a turma está cheia, ou a transferência causa discrepância na distribuição dos alunos, ou o os horários não são compatíveis, ou o aluno não é elegível para entrar na turma.\(\backslash\)n"{}};}
+\DoxyCodeLine{570         queueRequests.pop();}
+\DoxyCodeLine{571     \}}
+\DoxyCodeLine{572 \}}
+\DoxyCodeLine{573 }
+\DoxyCodeLine{584 \textcolor{keywordtype}{void} \mbox{\hyperlink{Menu_8h_a6b1892d55197883e330818e122ffe9f1}{verRequisicao}}(vector<Uc> *ucs, vector<Student> *students)\{}
+\DoxyCodeLine{585     \textcolor{comment}{//print the resquests that were successul string from the last one and until the oldest one}}
+\DoxyCodeLine{586     stack<Opperation> requests = \mbox{\hyperlink{AuxiliarFunctions_8h_acb47f4956f4de2e2cc3e1774dd206550}{loadRequests}}();}
+\DoxyCodeLine{587     \textcolor{keywordflow}{if} (requests.empty()) \{ \textcolor{comment}{//checks if there is any request that was made}}
+\DoxyCodeLine{588         cout << \textcolor{stringliteral}{"{}Não há requisições efetuadas com êxito."{}} << endl;}
+\DoxyCodeLine{589     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{590         \textcolor{keywordflow}{while} (!requests.empty()) \{ \textcolor{comment}{//prints the requests}}
+\DoxyCodeLine{591             \textcolor{keywordflow}{if} (requests.top().type == \textcolor{stringliteral}{"{}add"{}})\{}
+\DoxyCodeLine{592                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nAdicionar o Estudante número: "{}} << requests.top().meca << \textcolor{stringliteral}{"{} à turma "{}} << requests.top().classFinal <<}
+\DoxyCodeLine{593                      \textcolor{stringliteral}{"{} da UC "{}} << requests.top().ucCode << endl;}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595             \}}
+\DoxyCodeLine{596             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (requests.top().type == \textcolor{stringliteral}{"{}remove"{}})\{}
+\DoxyCodeLine{597                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nRemover o Estudante número: "{}} << requests.top().meca << \textcolor{stringliteral}{"{} da turma "{}} << requests.top().classOrigin <<}
+\DoxyCodeLine{598                      \textcolor{stringliteral}{"{} da UC "{}} << requests.top().ucCode << endl;}
+\DoxyCodeLine{599             \}}
+\DoxyCodeLine{600             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{601                 cout << \textcolor{stringliteral}{"{}\(\backslash\)nO Estudante número: "{}} << requests.top().meca << \textcolor{stringliteral}{"{} trocou da turma "{}} << requests.top().classOrigin <<}
+\DoxyCodeLine{602                      \textcolor{stringliteral}{"{} para a turma "{}} << requests.top().classFinal << \textcolor{stringliteral}{"{} da UC "{}} << requests.top().ucCode << endl;}
+\DoxyCodeLine{603             \}}
+\DoxyCodeLine{604             requests.pop(); \textcolor{comment}{//pops the top of the stack element so we can access the next one}}
+\DoxyCodeLine{605         \}}
+\DoxyCodeLine{606     \}}
+\DoxyCodeLine{607 \}}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{620 \textcolor{keywordtype}{int} \mbox{\hyperlink{Menu_8h_ad38403e0952fb803e0188c404d0730d1}{menu}}(vector<Uc> *ucs, vector<Student> *students) \{}
+\DoxyCodeLine{621     \textcolor{comment}{//Main menu of te whole program}}
+\DoxyCodeLine{622     \textcolor{keywordtype}{string} choice;}
+\DoxyCodeLine{623 }
+\DoxyCodeLine{624     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{625         \textcolor{comment}{// Show options}}
+\DoxyCodeLine{626         cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nBem-\/vindo ao Menu de consulta e gestão de Alunos, Turmas e UCs da FEUP\(\backslash\)n"{}} << endl;}
+\DoxyCodeLine{627         cout << \textcolor{stringliteral}{"{}Menu:\(\backslash\)n"{}} << endl;}
+\DoxyCodeLine{628         cout << \textcolor{stringliteral}{"{}1 -\/ Ver todos os estudantes"{}} << endl;}
+\DoxyCodeLine{629         cout << \textcolor{stringliteral}{"{}2 -\/ Ver todos as UC's e turmas que as compões juntamente com os alunos inscritos"{}} << endl;}
+\DoxyCodeLine{630         cout << \textcolor{stringliteral}{"{}3 -\/ Ver o horário todas as turmas de uma UC"{}} << endl;}
+\DoxyCodeLine{631         cout << \textcolor{stringliteral}{"{}4 -\/ Informações sobre um estudante específico"{}} << endl;}
+\DoxyCodeLine{632         cout << \textcolor{stringliteral}{"{}5 -\/ Processar uma requisição"{}} << endl;}
+\DoxyCodeLine{633         cout << \textcolor{stringliteral}{"{}6 -\/ Fazer undo à última requisição efetuada com êxito"{}} << endl;}
+\DoxyCodeLine{634         cout << \textcolor{stringliteral}{"{}7 -\/ Ver a lista de requisições efetuadas com êxito"{}} << endl;}
+\DoxyCodeLine{635         cout << \textcolor{stringliteral}{"{}0 -\/ Sair"{}} << endl;}
+\DoxyCodeLine{636         cout << \textcolor{stringliteral}{"{}Digite sua escolha: "{}};}
+\DoxyCodeLine{637         cin >> choice;}
+\DoxyCodeLine{638         \textcolor{comment}{// Executar ações com base na escolha do usuário}}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640         \textcolor{comment}{//Access the users choice}}
+\DoxyCodeLine{641         \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}1"{}}) \{}
+\DoxyCodeLine{642             \mbox{\hyperlink{Menu_8h_a8eae54c7e46ce6a59c1c7e12e4654dd5}{verTodosEstudantes}}(ucs, students);}
+\DoxyCodeLine{643         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}2"{}}) \{}
+\DoxyCodeLine{644             \mbox{\hyperlink{Menu_8h_ab71bbc6d90e05e1afdeb2f45188aa14e}{verUcClassStudent}}(ucs, students);}
+\DoxyCodeLine{645         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}3"{}}) \{}
+\DoxyCodeLine{646             \mbox{\hyperlink{Menu_8h_a53aed4e821f0af8025f6893913d94e5e}{verTodasClasses}}(ucs, students);}
+\DoxyCodeLine{647         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}4"{}}) \{}
+\DoxyCodeLine{648             \mbox{\hyperlink{Menu_8h_ae4b0f7c8bfb183e510e882e89afa840f}{infoSobreEstudante}}(ucs, students);}
+\DoxyCodeLine{649         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}5"{}}) \{}
+\DoxyCodeLine{650             \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processarRequisicao}}(ucs, students);}
+\DoxyCodeLine{651         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}6"{}}) \{}
+\DoxyCodeLine{652             \mbox{\hyperlink{Menu_8h_aee5849044f4ad614df09e87de31f1559}{undoRequisicao}}(ucs, students);}
+\DoxyCodeLine{653         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}7"{}}) \{}
+\DoxyCodeLine{654             \mbox{\hyperlink{Menu_8h_a6b1892d55197883e330818e122ffe9f1}{verRequisicao}}(ucs, students);}
+\DoxyCodeLine{655         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"{}0"{}}) \{}
+\DoxyCodeLine{656             cout << \textcolor{stringliteral}{"{}A encerrar o programa. Obrigado!"{}} << endl;}
+\DoxyCodeLine{657         \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{//Access if the input if valid}}
+\DoxyCodeLine{658             cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nEscolha inválida. Por favor, tente novamente."{}} << endl;}
+\DoxyCodeLine{659             cout << \textcolor{stringliteral}{"{}Digite um número entre 0 -\/ 7."{}} << endl;}
+\DoxyCodeLine{660         \}}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{662 }
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664     \} \textcolor{keywordflow}{while} (choice != \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{665 }
+\DoxyCodeLine{666     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{667 \}}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_MENU\_H}}
+
+\end{DoxyCode}

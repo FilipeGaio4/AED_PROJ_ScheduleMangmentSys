@@ -1,0 +1,221 @@
+\hypertarget{classClasss}{}\doxysection{Classs Class Reference}
+\label{classClasss}\index{Classs@{Classs}}
+
+
+The Class \mbox{\hyperlink{classClasss}{Classs}} contains it\textquotesingle{}s atrributes and declaration of it\textquotesingle{}s functions (It\textquotesingle{}s called \mbox{\hyperlink{classClasss}{Classs}} with triple \textquotesingle{}s\textquotesingle{} due to conflicts between the keyword class.  
+
+
+
+
+{\ttfamily \#include $<$Classs.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClasss_a8a2777aa774ac533e060349103516cc1}\label{classClasss_a8a2777aa774ac533e060349103516cc1}} 
+{\bfseries Classs} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classClasss}{Classs}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classClasss_a62a4e9183c6a1db01a7204faf4da4cd1}{Classs}} (string code)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the \mbox{\hyperlink{classClasss}{Classs}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClasss_ad8e12189ad8e7c98069ed534c2d0902f}{set\+Code}} (string code)
+\begin{DoxyCompactList}\small\item\em Sets the unique code for the class. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClasss_a4a40648a3d8fd64f1c46157eb5758411}{get\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Gets the unique code of the class. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ \mbox{\hyperlink{classClasss_a582cd100c057e93c8e8a2f635c0bef75}{get\+Students}} () const
+\begin{DoxyCompactList}\small\item\em Gets the vector of enrolled students in the class. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structAula}{Aula}} $>$ \mbox{\hyperlink{classClasss_accfd844188435042f4e63135e30da925}{get\+Schedule}} () const
+\begin{DoxyCompactList}\small\item\em Gets the vector of Lectures in the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClasss_a2eeb3a636e29254598f962620cbb9983}{set\+Students}} (vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ students)
+\begin{DoxyCompactList}\small\item\em Adds a student to the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClasss_a6b5fcba79b5ca327cfb365ec73b884af}{add\+Student\+To\+Uc}} (\mbox{\hyperlink{classStudent}{Student}} \&student, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Adds a student to a certain class of a course. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClasss_a41c0c7ac8f9a2c9a382917f2c1a72a6b}{remove\+Student}} (\mbox{\hyperlink{classStudent}{Student}} \&student, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Removes a student from the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClasss_ab42df9de0df0408f4765efc49e19b192}{add\+Aula}} (\mbox{\hyperlink{structAula}{Aula}} aula)
+\begin{DoxyCompactList}\small\item\em Adds a lecture event to the class schedule. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClasss_a6c9e90b9ec4343db6c694eb9a3bdaddf}\label{classClasss_a6c9e90b9ec4343db6c694eb9a3bdaddf}} 
+void {\bfseries print\+Aula} ()
+\begin{DoxyCompactList}\small\item\em Prints the schedule for the class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classClasss_a841d07ca20923c364ec4acb1d77cdf79}{can\+Enter}} ()
+\begin{DoxyCompactList}\small\item\em Checks if a student can enter the class based on its capacity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classClasss_afaea253d7b6cc1cfd206ad46e9deac86}{schedule\+Conflicts}} (\mbox{\hyperlink{classClasss}{Classs}} required\+Classs)
+\begin{DoxyCompactList}\small\item\em Checks for schedule conflicts with another class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Class \mbox{\hyperlink{classClasss}{Classs}} contains it\textquotesingle{}s atrributes and declaration of it\textquotesingle{}s functions (It\textquotesingle{}s called \mbox{\hyperlink{classClasss}{Classs}} with triple \textquotesingle{}s\textquotesingle{} due to conflicts between the keyword class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClasss_a62a4e9183c6a1db01a7204faf4da4cd1}\label{classClasss_a62a4e9183c6a1db01a7204faf4da4cd1}} 
+\index{Classs@{Classs}!Classs@{Classs}}
+\index{Classs@{Classs}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{Classs()}{Classs()}}
+{\footnotesize\ttfamily Classs\+::\+Classs (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the \mbox{\hyperlink{classClasss}{Classs}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Unique code for identifying the class. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClasss_ab42df9de0df0408f4765efc49e19b192}\label{classClasss_ab42df9de0df0408f4765efc49e19b192}} 
+\index{Classs@{Classs}!addAula@{addAula}}
+\index{addAula@{addAula}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{addAula()}{addAula()}}
+{\footnotesize\ttfamily void Classs\+::add\+Aula (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAula}{Aula}}}]{aula }\end{DoxyParamCaption})}
+
+
+
+Adds a lecture event to the class schedule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aula} & \mbox{\hyperlink{structAula}{Aula}} object representing the lecture event to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClasss_a6b5fcba79b5ca327cfb365ec73b884af}\label{classClasss_a6b5fcba79b5ca327cfb365ec73b884af}} 
+\index{Classs@{Classs}!addStudentToUc@{addStudentToUc}}
+\index{addStudentToUc@{addStudentToUc}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{addStudentToUc()}{addStudentToUc()}}
+{\footnotesize\ttfamily void Classs\+::add\+Student\+To\+Uc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStudent}{Student}} \&}]{student,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+Adds a student to a certain class of a course. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & \mbox{\hyperlink{classStudent}{Student}} object representing the student to be added. \\
+\hline
+{\em uc\+Code} & Unique code for identifying the course. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClasss_a841d07ca20923c364ec4acb1d77cdf79}\label{classClasss_a841d07ca20923c364ec4acb1d77cdf79}} 
+\index{Classs@{Classs}!canEnter@{canEnter}}
+\index{canEnter@{canEnter}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{canEnter()}{canEnter()}}
+{\footnotesize\ttfamily bool Classs\+::can\+Enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if a student can enter the class based on its capacity. 
+
+\begin{DoxyReturn}{Returns}
+True if the student can enter, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClasss_a4a40648a3d8fd64f1c46157eb5758411}\label{classClasss_a4a40648a3d8fd64f1c46157eb5758411}} 
+\index{Classs@{Classs}!getCode@{getCode}}
+\index{getCode@{getCode}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily string Classs\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the unique code of the class. 
+
+\begin{DoxyReturn}{Returns}
+The unique code of the class. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClasss_accfd844188435042f4e63135e30da925}\label{classClasss_accfd844188435042f4e63135e30da925}} 
+\index{Classs@{Classs}!getSchedule@{getSchedule}}
+\index{getSchedule@{getSchedule}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{getSchedule()}{getSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structAula}{Aula}} $>$ Classs\+::get\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the vector of Lectures in the class. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing the Lectures in the class. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClasss_a582cd100c057e93c8e8a2f635c0bef75}\label{classClasss_a582cd100c057e93c8e8a2f635c0bef75}} 
+\index{Classs@{Classs}!getStudents@{getStudents}}
+\index{getStudents@{getStudents}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{getStudents()}{getStudents()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ Classs\+::get\+Students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the vector of enrolled students in the class. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing the enrolled students in the class. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClasss_a41c0c7ac8f9a2c9a382917f2c1a72a6b}\label{classClasss_a41c0c7ac8f9a2c9a382917f2c1a72a6b}} 
+\index{Classs@{Classs}!removeStudent@{removeStudent}}
+\index{removeStudent@{removeStudent}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{removeStudent()}{removeStudent()}}
+{\footnotesize\ttfamily void Classs\+::remove\+Student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStudent}{Student}} \&}]{student,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+Removes a student from the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & \mbox{\hyperlink{classStudent}{Student}} object representing the student to be removed. \\
+\hline
+{\em uc\+Code} & Unique code for identifying the course. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClasss_afaea253d7b6cc1cfd206ad46e9deac86}\label{classClasss_afaea253d7b6cc1cfd206ad46e9deac86}} 
+\index{Classs@{Classs}!scheduleConflicts@{scheduleConflicts}}
+\index{scheduleConflicts@{scheduleConflicts}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{scheduleConflicts()}{scheduleConflicts()}}
+{\footnotesize\ttfamily bool Classs\+::schedule\+Conflicts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClasss}{Classs}}}]{required\+Classs }\end{DoxyParamCaption})}
+
+
+
+Checks for schedule conflicts with another class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em required\+Classs} & \mbox{\hyperlink{classClasss}{Classs}} object representing the required class to check for conflicts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there are schedule conflicts, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClasss_ad8e12189ad8e7c98069ed534c2d0902f}\label{classClasss_ad8e12189ad8e7c98069ed534c2d0902f}} 
+\index{Classs@{Classs}!setCode@{setCode}}
+\index{setCode@{setCode}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{setCode()}{setCode()}}
+{\footnotesize\ttfamily void Classs\+::set\+Code (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Sets the unique code for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Unique code for identifying the class. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClasss_a2eeb3a636e29254598f962620cbb9983}\label{classClasss_a2eeb3a636e29254598f962620cbb9983}} 
+\index{Classs@{Classs}!setStudents@{setStudents}}
+\index{setStudents@{setStudents}!Classs@{Classs}}
+\doxysubsubsection{\texorpdfstring{setStudents()}{setStudents()}}
+{\footnotesize\ttfamily void Classs\+::set\+Students (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$}]{students }\end{DoxyParamCaption})}
+
+
+
+Adds a student to the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Vector of students to be enrolled in the class. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\mbox{\hyperlink{Classs_8h}{Classs.\+h}}\item 
+/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/Classs.\+cpp\end{DoxyCompactItemize}

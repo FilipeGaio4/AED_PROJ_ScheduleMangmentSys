@@ -1,0 +1,66 @@
+\hypertarget{_classes_schedule_load_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Classes\+Schedule\+Load.h}
+\mbox{\hyperlink{_classes_schedule_load_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 29-\/10-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef PROJ2023\_CLASSESSCHEDULELOAD\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define PROJ2023\_CLASSESSCHEDULELOAD\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_classs_8h}{Classs.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uc_8h}{Uc.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//This function will read data from csv and store every Schedule of every class}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 vector<Uc> \mbox{\hyperlink{_classes_schedule_load_8h_ac5c17697d593574d9a63e5ec6dbb0329}{loadClassesSchedule}}(vector<Uc> *ucsImport, vector<Student> *studentsStudents) \{}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     ifstream file(\textcolor{stringliteral}{"{}../schedule/classes.csv"{}}); \textcolor{comment}{// Open the CSV file}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{true};}
+\DoxyCodeLine{27     \textcolor{keywordflow}{while} (getline(file, line)) \{}
+\DoxyCodeLine{28         istringstream ss(line);}
+\DoxyCodeLine{29         \textcolor{keywordtype}{string} ucCode, classsCode, weekday, startHour, duration, type;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{keywordflow}{if} (!first) \{}
+\DoxyCodeLine{32             getline(ss, classsCode, \textcolor{charliteral}{','});}
+\DoxyCodeLine{33             getline(ss, ucCode, \textcolor{charliteral}{','});}
+\DoxyCodeLine{34             getline(ss, weekday, \textcolor{charliteral}{','});}
+\DoxyCodeLine{35             getline(ss, startHour, \textcolor{charliteral}{','});}
+\DoxyCodeLine{36             getline(ss, duration, \textcolor{charliteral}{','});}
+\DoxyCodeLine{37             getline(ss, type, \textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{38             \textcolor{keywordtype}{double} start = stod(startHour);}
+\DoxyCodeLine{39             \textcolor{keywordtype}{double} end = stod(duration);}
+\DoxyCodeLine{40             end += start;}
+\DoxyCodeLine{41             \mbox{\hyperlink{struct_aula}{Aula}} aula = \{weekday, start, end, type\};}
+\DoxyCodeLine{42             \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_uc}{Uc}} \&uc: *ucsImport) \{}
+\DoxyCodeLine{43                 \textcolor{keywordflow}{if} (uc.getCode() == ucCode) \{}
+\DoxyCodeLine{44                     \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_classs}{Classs}} \&c: uc.getClassses()) \{}
+\DoxyCodeLine{45                         \textcolor{keywordflow}{if} (c.getCode() == classsCode) \{}
+\DoxyCodeLine{46                             c.addAula(aula);}
+\DoxyCodeLine{47                             uc.updateClasss(c);}
+\DoxyCodeLine{48                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{49                         \}}
+\DoxyCodeLine{50                     \}}
+\DoxyCodeLine{51                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{52                 \}}
+\DoxyCodeLine{53             \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56         first = \textcolor{keyword}{false};}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} *ucsImport;}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_CLASSESSCHEDULELOAD\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,60 @@
+\hypertarget{_classes_per_uc_load_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Classes\+Per\+Uc\+Load.h}
+\mbox{\hyperlink{_classes_per_uc_load_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 28-\/10-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef PROJ2023\_CLASSESPERUCLOAD\_H}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define PROJ2023\_CLASSESPERUCLOAD\_H}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_classs_8h}{Classs.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uc_8h}{Uc.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//This function will read data from csv and store every class of every Uc}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 vector<Uc> \mbox{\hyperlink{_classes_per_uc_load_8h_ae2d849262ec86f98083dd1aec0d3b0b8}{loadClassesPerUc}}() \{}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     vector<Uc> ucs; \textcolor{comment}{// Vector to store CSV data (Ucs) just to start}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     ifstream file(\textcolor{stringliteral}{"{}../schedule/classes\_per\_uc.csv"{}}); \textcolor{comment}{// Open the CSV file}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{true};}
+\DoxyCodeLine{27     \textcolor{keywordflow}{while} (getline(file, line)) \{}
+\DoxyCodeLine{28         istringstream ss(line);}
+\DoxyCodeLine{29         \textcolor{keywordtype}{bool} existeUc = \textcolor{keyword}{false};}
+\DoxyCodeLine{30         \textcolor{keywordtype}{string} ucCode, classsCode;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keywordflow}{if} (!first) \{}
+\DoxyCodeLine{33             getline(ss, ucCode, \textcolor{charliteral}{','});}
+\DoxyCodeLine{34             getline(ss, classsCode, \textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{35             \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_uc}{Uc}} \&uc: ucs) \{}
+\DoxyCodeLine{36                 \textcolor{keywordflow}{if} (uc.getCode() == ucCode) \{}
+\DoxyCodeLine{37                     uc.addClasss(\mbox{\hyperlink{class_classs}{Classs}}(classsCode));}
+\DoxyCodeLine{38                     existeUc = \textcolor{keyword}{true};}
+\DoxyCodeLine{39                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{40                 \}}
+\DoxyCodeLine{41             \}}
+\DoxyCodeLine{42             \textcolor{keywordflow}{if} (!existeUc) \{}
+\DoxyCodeLine{43                 \mbox{\hyperlink{class_uc}{Uc}} uc = \mbox{\hyperlink{class_uc}{Uc}}(ucCode);}
+\DoxyCodeLine{44                 \mbox{\hyperlink{class_classs}{Classs}} classs = \mbox{\hyperlink{class_classs}{Classs}}(classsCode);}
+\DoxyCodeLine{45                 uc.\mbox{\hyperlink{class_uc_a9c317069b3aa898f4dd16f88f6c57d2e}{addClasss}}(classs);}
+\DoxyCodeLine{46                 ucs.push\_back(uc);}
+\DoxyCodeLine{47             \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \}}
+\DoxyCodeLine{50         first = \textcolor{keyword}{false};}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} ucs;}
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_CLASSESPERUCLOAD\_H}}
+
+\end{DoxyCode}

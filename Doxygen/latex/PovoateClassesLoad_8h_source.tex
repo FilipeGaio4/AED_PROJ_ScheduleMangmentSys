@@ -1,0 +1,88 @@
+\hypertarget{PovoateClassesLoad_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Povoate\+Classes\+Load.h}
+\mbox{\hyperlink{PovoateClassesLoad_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 28-\/10-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef PROJ2023\_POVOATECLASSESLOAD\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define PROJ2023\_POVOATECLASSESLOAD\_H}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Classs_8h}{Classs.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Uc_8h}{Uc.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//This function will read data from csv and store every student and every class they're in}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29 vector<Student> \mbox{\hyperlink{PovoateClassesLoad_8h_a0bf059eacf190ee15386239430efa7d1}{PovoateClassesLoad}}(vector<Uc> *ucsImport) \{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     vector<Student> students; \textcolor{comment}{// Vector to store CSV data (Students) just to start}}
+\DoxyCodeLine{32     ifstream file(\textcolor{stringliteral}{"{}../schedule/students\_classes\_final.csv"{}}); \textcolor{comment}{// Open the CSV file}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{true};}
+\DoxyCodeLine{36     \textcolor{keywordflow}{while} (getline(file, line)) \{}
+\DoxyCodeLine{37         \textcolor{keywordflow}{if} (line != \textcolor{stringliteral}{"{}\(\backslash\)r"{}})\{}
+\DoxyCodeLine{38             istringstream ss(line);}
+\DoxyCodeLine{39             \textcolor{keywordtype}{string} nome, num, ucCode, classsCode;}
+\DoxyCodeLine{40             \textcolor{keywordtype}{int} numero;}
+\DoxyCodeLine{41             \textcolor{keywordtype}{bool} existeAluno = \textcolor{keyword}{false};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43             \textcolor{keywordflow}{if} (!first) \{}
+\DoxyCodeLine{44                 getline(ss, num, \textcolor{charliteral}{','});}
+\DoxyCodeLine{45                 getline(ss, nome, \textcolor{charliteral}{','}); \textcolor{comment}{// Read number as a string and then convert}}
+\DoxyCodeLine{46                 getline(ss, ucCode, \textcolor{charliteral}{','});}
+\DoxyCodeLine{47                 getline(ss, classsCode, \textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{48                 numero = stoi(num);}
+\DoxyCodeLine{49                 \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{50                 \textcolor{keywordflow}{for} (i = 0; i < students.size(); i++)\{}
+\DoxyCodeLine{51                     \textcolor{keywordflow}{if} (students[i].getNumber() == numero)\{}
+\DoxyCodeLine{52                         existeAluno = \textcolor{keyword}{true};}
+\DoxyCodeLine{53                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54                     \}}
+\DoxyCodeLine{55                 \}}
+\DoxyCodeLine{56                 \textcolor{keywordflow}{if} (!existeAluno)\{}
+\DoxyCodeLine{57                     \mbox{\hyperlink{classStudent}{Student}} student(numero, nome);}
+\DoxyCodeLine{58                     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classUc}{Uc}} \&uc: *ucsImport) \{}
+\DoxyCodeLine{59                         \textcolor{keywordflow}{if} (uc.getCode() == ucCode) \{}
+\DoxyCodeLine{60                             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} \&c: uc.getClassses()) \{}
+\DoxyCodeLine{61                                 \textcolor{keywordflow}{if} (c.getCode() == classsCode) \{}
+\DoxyCodeLine{62                                     c.addStudentToUc(student, ucCode);}
+\DoxyCodeLine{63                                     uc.updateClasss(c);}
+\DoxyCodeLine{64                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65                                 \}}
+\DoxyCodeLine{66                             \}}
+\DoxyCodeLine{67                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{68                         \}}
+\DoxyCodeLine{69                     \}}
+\DoxyCodeLine{70                     students.push\_back(student);}
+\DoxyCodeLine{71                 \}}
+\DoxyCodeLine{72                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{73                     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classUc}{Uc}} \&uc: *ucsImport) \{}
+\DoxyCodeLine{74                         \textcolor{keywordflow}{if} (uc.getCode() == ucCode) \{}
+\DoxyCodeLine{75                             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classClasss}{Classs}} \&c: uc.getClassses()) \{}
+\DoxyCodeLine{76                                 \textcolor{keywordflow}{if} (c.getCode() == classsCode) \{}
+\DoxyCodeLine{77                                     c.addStudentToUc(students[i], ucCode);}
+\DoxyCodeLine{78                                     uc.updateClasss(c);}
+\DoxyCodeLine{79                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{80                                 \}}
+\DoxyCodeLine{81                             \}}
+\DoxyCodeLine{82                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{83                         \}}
+\DoxyCodeLine{84                     \}}
+\DoxyCodeLine{85                 \}}
+\DoxyCodeLine{86             \} \textcolor{keywordflow}{else} first = \textcolor{keyword}{false};}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89     file.close();}
+\DoxyCodeLine{90     \textcolor{keywordflow}{return} students;}
+\DoxyCodeLine{91 \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_POVOATECLASSESLOAD\_H}}
+
+\end{DoxyCode}

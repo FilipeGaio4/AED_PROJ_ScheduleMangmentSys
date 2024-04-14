@@ -1,0 +1,183 @@
+\hypertarget{classStudent}{}\doxysection{Student Class Reference}
+\label{classStudent}\index{Student@{Student}}
+
+
+The \mbox{\hyperlink{classStudent}{Student}} class represents a student.  
+
+
+
+
+{\ttfamily \#include $<$Student.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStudent_a44b0dc0efbc95f687706f28363e897db}\label{classStudent_a44b0dc0efbc95f687706f28363e897db}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classStudent}{Student}} \&other) const
+\begin{DoxyCompactList}\small\item\em Over\+Load of \texorpdfstring{$<$}{<} opperator to be able to sort the students by numbers in a set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStudent_af9168cedbfa5565cf0b20c1a9d3f5c9d}\label{classStudent_af9168cedbfa5565cf0b20c1a9d3f5c9d}} 
+{\bfseries Student} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classStudent}{Student}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStudent_a17ca546b79aacc213230f1094e9824c6}{Student}} (int number, string name)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the \mbox{\hyperlink{classStudent}{Student}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStudent_a56e75dae2c6ac669b7fd65f09004a49b}{set\+Number}} (int number)
+\begin{DoxyCompactList}\small\item\em Sets the student\textquotesingle{}s unique identification number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStudent_a34ff388814a53eddebfdf7af5abe1d98}{set\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Sets the student\textquotesingle{}s name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classStudent_ae7b15f60adaf461d6e70079f7854487c}{get\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s unique identification number. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classStudent_a1df6c28e6416e20d338b9ff11bdc1e04}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s name. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ string, string $>$ $>$ \mbox{\hyperlink{classStudent_a4bbb17e54054460ceffd29568dd19a52}{get\+Is\+In}} () const
+\begin{DoxyCompactList}\small\item\em Gets the vector of pairs containing UC and class codes where the student is enrolled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStudent_a54f50f0aec0497221c0f49eb6c63483d}{enroll}} (const string \&\mbox{\hyperlink{classUc}{Uc}}, const string \&cl)
+\begin{DoxyCompactList}\small\item\em Enrolls the student in a specific UC and class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStudent_a851ae3734971b659cd8be078a6c0a188}\label{classStudent_a851ae3734971b659cd8be078a6c0a188}} 
+void {\bfseries clear\+Is\+In} ()
+\begin{DoxyCompactList}\small\item\em Clears the list of UCs and classes where the student is enrolled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStudent_af5508431b49939874cb61a1ece491e0b}\label{classStudent_af5508431b49939874cb61a1ece491e0b}} 
+void {\bfseries print\+Student} () const
+\begin{DoxyCompactList}\small\item\em Prints the student\textquotesingle{}s name and number to the terminal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStudent_a829beeab5d3ff33ad2931d80f1aad042}\label{classStudent_a829beeab5d3ff33ad2931d80f1aad042}} 
+void {\bfseries print\+Student\+Is\+In} () const
+\begin{DoxyCompactList}\small\item\em Prints the list of UCs and classes where the student is enrolled to the terminal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStudent_aa909514d8fe37fe6161e83d4a9a29634}\label{classStudent_aa909514d8fe37fe6161e83d4a9a29634}} 
+void {\bfseries print\+Schedule} () const
+\begin{DoxyCompactList}\small\item\em Prints the student\textquotesingle{}s schedule to the terminal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStudent_a26574368d00c3d1cd853527ff06bf6ee}{remove}} (string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Removes the student from a specific UC and class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classStudent}{Student}} class represents a student. 
+
+The \mbox{\hyperlink{classStudent}{Student}} class includes attributes for student number, name, and a vector to keep track of the courses (UC) and classes the student is enrolled in. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStudent_a17ca546b79aacc213230f1094e9824c6}\label{classStudent_a17ca546b79aacc213230f1094e9824c6}} 
+\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}}
+{\footnotesize\ttfamily Student\+::\+Student (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the \mbox{\hyperlink{classStudent}{Student}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & \mbox{\hyperlink{classStudent}{Student}}\textquotesingle{}s unique identification number. \\
+\hline
+{\em name} & \mbox{\hyperlink{classStudent}{Student}}\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStudent_a54f50f0aec0497221c0f49eb6c63483d}\label{classStudent_a54f50f0aec0497221c0f49eb6c63483d}} 
+\index{Student@{Student}!enroll@{enroll}}
+\index{enroll@{enroll}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{enroll()}{enroll()}}
+{\footnotesize\ttfamily void Student\+::enroll (\begin{DoxyParamCaption}\item[{const string \&}]{Uc,  }\item[{const string \&}]{cl }\end{DoxyParamCaption})}
+
+
+
+Enrolls the student in a specific UC and class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classUc}{Uc}}} & UC code where the student is enrolled. \\
+\hline
+{\em cl} & Class code where the student is enrolled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStudent_a4bbb17e54054460ceffd29568dd19a52}\label{classStudent_a4bbb17e54054460ceffd29568dd19a52}} 
+\index{Student@{Student}!getIsIn@{getIsIn}}
+\index{getIsIn@{getIsIn}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getIsIn()}{getIsIn()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ string, string $>$ $>$ Student\+::get\+Is\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the vector of pairs containing UC and class codes where the student is enrolled. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pairs containing UC and class codes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStudent_a1df6c28e6416e20d338b9ff11bdc1e04}\label{classStudent_a1df6c28e6416e20d338b9ff11bdc1e04}} 
+\index{Student@{Student}!getName@{getName}}
+\index{getName@{getName}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Student\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the student\textquotesingle{}s name. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classStudent}{Student}}\textquotesingle{}s name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStudent_ae7b15f60adaf461d6e70079f7854487c}\label{classStudent_ae7b15f60adaf461d6e70079f7854487c}} 
+\index{Student@{Student}!getNumber@{getNumber}}
+\index{getNumber@{getNumber}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getNumber()}{getNumber()}}
+{\footnotesize\ttfamily int Student\+::get\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the student\textquotesingle{}s unique identification number. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classStudent}{Student}}\textquotesingle{}s unique identification number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStudent_a26574368d00c3d1cd853527ff06bf6ee}\label{classStudent_a26574368d00c3d1cd853527ff06bf6ee}} 
+\index{Student@{Student}!remove@{remove}}
+\index{remove@{remove}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Student\+::remove (\begin{DoxyParamCaption}\item[{string}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+Removes the student from a specific UC and class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & UC code from which the student needs to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStudent_a34ff388814a53eddebfdf7af5abe1d98}\label{classStudent_a34ff388814a53eddebfdf7af5abe1d98}} 
+\index{Student@{Student}!setName@{setName}}
+\index{setName@{setName}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Student\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the student\textquotesingle{}s name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \mbox{\hyperlink{classStudent}{Student}}\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStudent_a56e75dae2c6ac669b7fd65f09004a49b}\label{classStudent_a56e75dae2c6ac669b7fd65f09004a49b}} 
+\index{Student@{Student}!setNumber@{setNumber}}
+\index{setNumber@{setNumber}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{setNumber()}{setNumber()}}
+{\footnotesize\ttfamily void Student\+::set\+Number (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Sets the student\textquotesingle{}s unique identification number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & \mbox{\hyperlink{classStudent}{Student}}\textquotesingle{}s unique identification number. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\mbox{\hyperlink{Student_8h}{Student.\+h}}\item 
+/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/Student.\+cpp\end{DoxyCompactItemize}

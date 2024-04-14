@@ -1,0 +1,214 @@
+\hypertarget{Menu_8h}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Menu.h File Reference}
+\label{Menu_8h}\index{/home/filipegaio/Desktop/FEUP/AED-\/cpp/AED-\/proj2023/Menu.h@{/home/filipegaio/Desktop/FEUP/AED-\/cpp/AED-\/proj2023/Menu.h}}
+
+
+Header file containing menu-\/related functions for managing students, classes, and UCs.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include \char`\"{}Student.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Classs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Uc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Auxiliar\+Functions.\+h\char`\"{}}\newline
+Include dependency graph for Menu.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Menu_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{Menu_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Menu_8h_a8eae54c7e46ce6a59c1c7e12e4654dd5}{ver\+Todos\+Estudantes}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Displays a sorted list of all students based on user\textquotesingle{}s choice of ordering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Menu_8h_ab71bbc6d90e05e1afdeb2f45188aa14e}{ver\+Uc\+Class\+Student}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Displays all UCs, their classes, and the students enrolled in each class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Menu_8h_a53aed4e821f0af8025f6893913d94e5e}{ver\+Todas\+Classes}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Displays all classes of a specific UC based on user input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Menu_8h_ae4b0f7c8bfb183e510e882e89afa840f}{info\+Sobre\+Estudante}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Displays detailed information about a specific student based on their student number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Menu_8h_aa172c96a6b2f7e814945e527fc589083}{processar\+Requisicao}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Processes a student\textquotesingle{}s request (add, remove, switch) for a specific UC and class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Menu_8h_aee5849044f4ad614df09e87de31f1559}{undo\+Requisicao}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Undoes the last successful request made by a student. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Menu_8h_a6b1892d55197883e330818e122ffe9f1}{ver\+Requisicao}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Displays a list of all successful requests made by students. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Menu_8h_ad38403e0952fb803e0188c404d0730d1}{menu}} (vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$ucs, vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$students)
+\begin{DoxyCompactList}\small\item\em Main menu function for user interaction and navigation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file containing menu-\/related functions for managing students, classes, and UCs. 
+
+This file defines functions to display menu options, process user input, and manage various operations related to students, classes, and UCs. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Menu_8h_ae4b0f7c8bfb183e510e882e89afa840f}\label{Menu_8h_ae4b0f7c8bfb183e510e882e89afa840f}} 
+\index{Menu.h@{Menu.h}!infoSobreEstudante@{infoSobreEstudante}}
+\index{infoSobreEstudante@{infoSobreEstudante}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{infoSobreEstudante()}{infoSobreEstudante()}}
+{\footnotesize\ttfamily void info\+Sobre\+Estudante (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Displays detailed information about a specific student based on their student number. 
+
+This function prompts the user to input a student number and displays information about that specific student, including their schedule and enrolled classes. Time Complexity \+: O(log s) being s the number of students then depending on the choice of the user in might iterate over a vector O(n) being n the number os classes that the student is in
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Menu_8h_ad38403e0952fb803e0188c404d0730d1}\label{Menu_8h_ad38403e0952fb803e0188c404d0730d1}} 
+\index{Menu.h@{Menu.h}!menu@{menu}}
+\index{menu@{menu}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily int menu (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Main menu function for user interaction and navigation. 
+
+This function displays the main menu options, processes user input, and performs corresponding actions. Time Complexity \+: O(1) this function only eveluate the value of input and calls another functions
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon successful execution. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Menu_8h_aa172c96a6b2f7e814945e527fc589083}\label{Menu_8h_aa172c96a6b2f7e814945e527fc589083}} 
+\index{Menu.h@{Menu.h}!processarRequisicao@{processarRequisicao}}
+\index{processarRequisicao@{processarRequisicao}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{processarRequisicao()}{processarRequisicao()}}
+{\footnotesize\ttfamily void processar\+Requisicao (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Processes a student\textquotesingle{}s request (add, remove, switch) for a specific UC and class. 
+
+This function allows the user to add, remove, or switch classes within a specific UC and to add and remove a specific UC. Time Complexity \+: O(uc $\ast$ cl $\ast$ s) being uc the number of ucs, cl the number os classes and s the number of students in the worst case that is switch
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Menu_8h_aee5849044f4ad614df09e87de31f1559}\label{Menu_8h_aee5849044f4ad614df09e87de31f1559}} 
+\index{Menu.h@{Menu.h}!undoRequisicao@{undoRequisicao}}
+\index{undoRequisicao@{undoRequisicao}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{undoRequisicao()}{undoRequisicao()}}
+{\footnotesize\ttfamily void undo\+Requisicao (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Undoes the last successful request made by a student. 
+
+This function allows the user to undo the last successful add, remove, or switch request made by the user. Time Complexity \+: O(uc $\ast$ cl $\ast$ s) being uc the number of ucs, cl the number os classes and s the number of students
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Menu_8h_a6b1892d55197883e330818e122ffe9f1}\label{Menu_8h_a6b1892d55197883e330818e122ffe9f1}} 
+\index{Menu.h@{Menu.h}!verRequisicao@{verRequisicao}}
+\index{verRequisicao@{verRequisicao}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{verRequisicao()}{verRequisicao()}}
+{\footnotesize\ttfamily void ver\+Requisicao (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Displays a list of all successful requests made by students. 
+
+This function displays a list of all successful add, remove, and switch requests made by students using a stack. Time Complexity \+: O(n) being n the number of requests in the stack
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Menu_8h_a53aed4e821f0af8025f6893913d94e5e}\label{Menu_8h_a53aed4e821f0af8025f6893913d94e5e}} 
+\index{Menu.h@{Menu.h}!verTodasClasses@{verTodasClasses}}
+\index{verTodasClasses@{verTodasClasses}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{verTodasClasses()}{verTodasClasses()}}
+{\footnotesize\ttfamily void ver\+Todas\+Classes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Displays all classes of a specific UC based on user input. 
+
+This function prompts the user to input a UC code and displays all classes within that UC. Time Complexity \+: O(uc $\ast$ cl $\ast$ sa) being uc the number of ucs, cl the number os classes and a the number of lectures in a class
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Menu_8h_a8eae54c7e46ce6a59c1c7e12e4654dd5}\label{Menu_8h_a8eae54c7e46ce6a59c1c7e12e4654dd5}} 
+\index{Menu.h@{Menu.h}!verTodosEstudantes@{verTodosEstudantes}}
+\index{verTodosEstudantes@{verTodosEstudantes}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{verTodosEstudantes()}{verTodosEstudantes()}}
+{\footnotesize\ttfamily void ver\+Todos\+Estudantes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Displays a sorted list of all students based on user\textquotesingle{}s choice of ordering. 
+
+This function allows the user to choose the sorting criteria for students (by number or name) and displays the sorted list along with additional information if requested. Time Complexity \+: O(log n) being n the number of lines in the csv it mught be aventually O(k log n) being n the number of lines in the csv and k the number os classes the student is in to check it\textquotesingle{}s year
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Menu_8h_ab71bbc6d90e05e1afdeb2f45188aa14e}\label{Menu_8h_ab71bbc6d90e05e1afdeb2f45188aa14e}} 
+\index{Menu.h@{Menu.h}!verUcClassStudent@{verUcClassStudent}}
+\index{verUcClassStudent@{verUcClassStudent}!Menu.h@{Menu.h}}
+\doxysubsubsection{\texorpdfstring{verUcClassStudent()}{verUcClassStudent()}}
+{\footnotesize\ttfamily void ver\+Uc\+Class\+Student (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classUc}{Uc}} $>$ $\ast$}]{ucs,  }\item[{vector$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ $\ast$}]{students }\end{DoxyParamCaption})}
+
+
+
+Displays all UCs, their classes, and the students enrolled in each class. 
+
+This function prints information about all UCs, their classes, and the students enrolled in each class. Time Complexity \+: O(uc $\ast$ cl $\ast$ s) being uc the number of ucs, cl the number os classes and s the number of students
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & Pointer to the vector of \mbox{\hyperlink{classUc}{Uc}} objects. \\
+\hline
+{\em students} & Pointer to the vector of \mbox{\hyperlink{classStudent}{Student}} objects. \\
+\hline
+\end{DoxyParams}

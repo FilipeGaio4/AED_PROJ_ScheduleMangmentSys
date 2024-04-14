@@ -1,0 +1,65 @@
+\hypertarget{_classs_8h_source}{}\doxysection{/home/filipegaio/\+Desktop/\+FEUP/\+AED-\/cpp/\+AED-\/proj2023/\+Classs.h}
+\mbox{\hyperlink{_classs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by filipegaio on 28-\/10-\/2023.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef CLASSS\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define CLASSS\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_aula_8h}{Aula.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_classs}{Classs}} \{}
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19     \textcolor{keywordtype}{string} codeCl\_;}
+\DoxyCodeLine{20     vector<Student> students\_;}
+\DoxyCodeLine{21     vector<Aula> aulas\_;}
+\DoxyCodeLine{22     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} Cap = 40;   \textcolor{comment}{//arbitrary value (change if needed)}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{comment}{//Classs Constructor}}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_classs_a8a2777aa774ac533e060349103516cc1}{Classs}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \mbox{\hyperlink{class_classs_a62a4e9183c6a1db01a7204faf4da4cd1}{Classs}}(\textcolor{keywordtype}{string} code);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{//Classs Setter and Getter}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_classs_ad8e12189ad8e7c98069ed534c2d0902f}{setCode}}(\textcolor{keywordtype}{string} code);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_classs_a4a40648a3d8fd64f1c46157eb5758411}{getCode}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{comment}{//Classs get Students}}
+\DoxyCodeLine{36     vector<Student> \mbox{\hyperlink{class_classs_a582cd100c057e93c8e8a2f635c0bef75}{getStudents}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//Class get lectures schedule}}
+\DoxyCodeLine{39     vector<Aula> \mbox{\hyperlink{class_classs_accfd844188435042f4e63135e30da925}{getSchedule}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//Classs functions to add and remove students}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_classs_a2eeb3a636e29254598f962620cbb9983}{setStudents}}(vector<Student> students);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_classs_a6b5fcba79b5ca327cfb365ec73b884af}{addStudentToUc}}(\mbox{\hyperlink{class_student}{Student}} \&student, \textcolor{keywordtype}{string} ucCode); \textcolor{comment}{//adds a student to a certain class of a uc}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_classs_a41c0c7ac8f9a2c9a382917f2c1a72a6b}{removeStudent}}(\mbox{\hyperlink{class_student}{Student}} \&student, \textcolor{keywordtype}{string} ucCode); \textcolor{comment}{//needs implementation BECAREFUL É PRECISO REMOVER DOS DOIS SITIOS VETOR ISINUCCL E REMOVER DA CLASS}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_classs_ab42df9de0df0408f4765efc49e19b192}{addAula}}(\mbox{\hyperlink{struct_aula}{Aula}} aula);  \textcolor{comment}{//adds an event of a lecture to a certain classs}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_classs_a6c9e90b9ec4343db6c694eb9a3bdaddf}{printAula}}(); \textcolor{comment}{//prints the schedule for a specific class}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_classs_a841d07ca20923c364ec4acb1d77cdf79}{canEnter}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_classs_afaea253d7b6cc1cfd206ad46e9deac86}{scheduleConflicts}}(\mbox{\hyperlink{class_classs}{Classs}} requiredClasss);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJ2023\_CLASSS\_H}}
+
+\end{DoxyCode}
